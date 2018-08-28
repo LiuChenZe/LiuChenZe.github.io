@@ -1,47 +1,47 @@
-.copyright {
+.copyright_post {
   width: 85%;
   max-width: 45em;
   margin: 2.8em auto 0;
   padding: 0.5em 1em;
   border: 1px solid #d3d3d3;
-  font-size: 0.93rem;
+  font-size: 2rem;
   line-height: 1.6em;
   word-break: break-all;
   background: rgba(255,255,255,0.4);
 }
-.copyright p {
+.copyright_post p {
   margin: 0;
 }
-.copyright span {
+.copyright_post span {
   display: inline-block;
   width: 5.2em;
   color: #b5b5b5;
   font-weight: bold;
 }
-.copyright .raw {
+.copyright_post .raw {
   margin-left: 1em;
   width: 5em;
 }
-.copyright a {
+.copyright_post a {
   color: #808080;
   border-bottom: 0;
 }
-.copyright a:hover {
+.copyright_post a:hover {
   color: #a3d2a3;
   text-decoration: underline;
 }
-.copyright:hover .fa-clipboard {
+.copyright_post:hover .fa-clipboard {
   color: #000;
 }
-.copyright .post-url:hover {
+.copyright_post .post-url:hover {
   font-weight: normal;
 }
-.copyright .copy-path {
+.copyright_post .copy-path {
   margin-left: 1em;
   width: 1em;
 mobile()
 }
-.copyright .copy-path:hover {
+.copyright_post .copy-path:hover {
   color: #808080;
   cursor: pointer;
 }
