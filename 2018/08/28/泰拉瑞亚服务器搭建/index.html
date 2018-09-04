@@ -148,7 +148,7 @@
                         <span>
                           日期 2018-08-28
                          </span>
-                         <span>字数 231</span>
+                         <span>字数 9,140</span>
                     </span>
                     <div class="tags text-center">
                         
@@ -173,7 +173,7 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <ol>
+                <h1 id="自建云服务器"><a href="#自建云服务器" class="headerlink" title="自建云服务器"></a>自建云服务器</h1><ol>
 <li>下载最新版的泰拉服务器工具<a href="https://github.com/Pryaxis/TShock/releases" target="_blank" rel="noopener">TShock</a></li>
 <li>解压后,会有个TerrariaServer.exe,双击即可</li>
 <li>图片如下<img src="https://github.com/LiuChenZe/LiuChenZe.github.io/blob/master/2018/08/28/%E6%B3%B0%E6%8B%89%E7%91%9E%E4%BA%9A%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/dc94c6bf6c81800aeb741d2bb33533fa838b474a.jpg?raw=true" alt="TerrariaServer.exe" title="TerrariaServer.exe">↑ 此图因为我就创了一个世界 所以只有1 按下1之后 enter.</li>
@@ -181,6 +181,822 @@
 <li>之后一路enter下去,就会完成创建,如下图<img src="https://github.com/LiuChenZe/LiuChenZe.github.io/blob/master/2018/08/28/%E6%B3%B0%E6%8B%89%E7%91%9E%E4%BA%9A%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/c1736681800a19d84f92102031fa828ba71e464a.jpg?raw=true" alt="创建完成" title="创建完成"></li>
 <li>上图的 /auth XXXXXX 是管理员密码（随机数字）,需要进游戏输入,剩下就是进游戏,获取管理员权限<blockquote>
 <p>1.保持TerrariaServer运行状态 进入游戏 输入/auth XXXXX<br>2 设置管理员 /user add xxx xxx superadmin 如果ID有空格 请加入空格 前一个X是ID 后一个是密码 最后superadmin没有空格 注意名字和ID之间是空格<br>3.登陆,输入 /login xxx:xxx 就行了<br>登录成功你就可以用 /HELP 来看指令,如/rain start 这类等等</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="泰拉瑞亚服务器指令"><a href="#泰拉瑞亚服务器指令" class="headerlink" title="泰拉瑞亚服务器指令"></a>泰拉瑞亚服务器指令</h1><blockquote>
+<p>config配置文件位于Tshock文件夹下。使用记事本方式打开此文件。修改config可以达到丰富服务器人性化的特点。以下是config配置↓↓↓【请修改冒号后面的数值】</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "InvasionMultiplier": 1, // 入侵规模，计算公式：入侵怪物数量=100+（X*HP＞200的玩家）</span><br><span class="line">  "DefaultMaximumSpawns": 5,// 怪物刷新最大数值（设置越高怪物越多）</span><br><span class="line">  "DefaultSpawnRate": 600,// 刷新怪物时间间隔，数值越大刷新越慢</span><br><span class="line">  "ServerPort": 7777,// 服务器端口【默认】</span><br><span class="line">  "EnableWhitelist": false,// 是否开启白名单【true代表是，false代表否，以下都是】</span><br><span class="line">  "InfiniteInvasion": false,// 是否无限制怪物入侵【开启后使用命令召唤的怪物入侵将达到200万只左右】</span><br><span class="line">  "PvPMode": "normal",// PVP模式【normal表示可以正常使用PVP，always表示强制PVP，disabled表示强制PVE】</span><br><span class="line">  "SpawnProtection": true,// 是否保护出生点【强烈建议设置】</span><br><span class="line">  "SpawnProtectionRadius": 10,// 出生点保护范围【一格一个】</span><br><span class="line">  "MaxSlots": 8,// 服务器人数上限</span><br><span class="line">  "RangeChecks": true,// 不明</span><br><span class="line">  "DisableBuild": false,// 是否禁止建筑【开启后将无法破坏地图里任何东西】</span><br><span class="line">  "SuperAdminChatRGB": [</span><br><span class="line">    255,</span><br><span class="line">    0,</span><br><span class="line">    <span class="number">0</span></span><br><span class="line">  ],// 超级管理员发言颜色【设置与人物初始设置颜色数值相同】</span><br><span class="line">  "SuperAdminChatPrefix": "(Admin) ",// GameMaster发言前缀（位于名字之前）</span><br><span class="line">  "SuperAdminChatSuffix": "",// GameMaster发言后缀（位于名字之后）</span><br><span class="line">  "BackupInterval": 0,// 地图备份时间间隔/分钟</span><br><span class="line">  "BackupKeepFor": 60,// 备份的地图保留时间</span><br><span class="line">  "RememberLeavePos": false,// 记录离开位置，再次登录服务器将传送到上一次离开服务器的位置</span><br><span class="line">  "HardcoreOnly": false,// 仅允许困难模式的玩家进入服务器</span><br><span class="line">  "MediumcoreOnly": false,// 仅允许中等模式的玩家进入服务器</span><br><span class="line">  "KickOnMediumcoreDeath": false,// 移除（kick）死亡的中等难度的玩家</span><br><span class="line">  "BanOnMediumcoreDeath": false,// 封禁（ban）死亡的中等难度的玩家</span><br><span class="line">  "AutoSave": true,// 是否自动保存地图，强烈建议开启</span><br><span class="line">  "AnnounceSave": true,// 自动保存的时候是否进行提示</span><br><span class="line">  "MaximumLoginAttempts": 5,// 登录次数尝试最大限制，尝试次数过多将被移除（kick）服务器</span><br><span class="line">  "ServerName": "",// 服务器名称</span><br><span class="line">  "UseServerName": false,// 是否使用服务器名称</span><br><span class="line">  "StorageType": "sqlite",// 数据库类型，建议不要改动</span><br><span class="line">  "MySqlHost": "localhost:3306",// 下面的都没用，建议不要改动</span><br><span class="line">  "MySqlDbName": "",</span><br><span class="line">  "MySqlUsername": "",</span><br><span class="line">  "MySqlPassword": "",</span><br><span class="line">  "MediumcoreBanReason": "Death results in a ban",// 中等难度的玩家被封禁（ban）时的理由</span><br><span class="line">  "MediumcoreKickReason": "Death results in a kick",// 中等难度的玩家被移除（kick）时的理由</span><br><span class="line">  "EnableIPBans": true,// 是否可以封禁（ban）ip地址</span><br><span class="line">  "EnableUUIDBans": true,// 是否可以封禁（ban）UUID</span><br><span class="line">  "EnableBanOnUsernames": false,// 是否可以封禁（ban）用户名</span><br><span class="line">  "DefaultRegistrationGroupName": "default",// 注册用户的默认用户组【如不了解组的规划请暂时不要改动】</span><br><span class="line">  "DefaultGuestGroupName": "guest",// 未注册用户的默认用户组</span><br><span class="line">  "DisableSpewLogs": true,// 禁止将服务器日志展示</span><br><span class="line">  "DisableSecondUpdateLogs": false,// 不明</span><br><span class="line">  "HashAlgorithm": "sha512",// 服务器里面玩家密码保存方法（要填一个哈希函数名）</span><br><span class="line">  "ServerFullReason": "Server is full",// 因服务器人满而被拒绝进入服务器的提示</span><br><span class="line">  "WhitelistKickReason": "You are not on the whitelist.",// 因不在白名单而被拒绝进入服务器的提示</span><br><span class="line">  "ServerFullNoReservedReason": "此为预留的管理员通道，您已被踢出服务器.",// 因服务器人满并预留给管理员的位置也满的情况下被拒绝进入服务器的提示</span><br><span class="line">  "SaveWorldOnCrash": true,// 服务器崩溃时是否及时保存地图</span><br><span class="line">  "EnableGeoIP": false,// 显示玩家国家所在地</span><br><span class="line">  "EnableTokenEndpointAuthentication": false,// 不明</span><br><span class="line">  "RestApiEnabled": false,// 不明</span><br><span class="line">  "RestApiPort": 7878,// 不明</span><br><span class="line">  "DisableTombstones": true,// 是否移除墓碑</span><br><span class="line">  "DisplayIPToAdmins": false,// 是否将玩家的IP地址展示给管理员</span><br><span class="line">  "KickProxyUsers": true,// 移除（kick）使用外挂的玩家</span><br><span class="line">  "DisableHardmode": false,// 禁止让世界进入困难模式（即肉山后）</span><br><span class="line">  "DisableDungeonGuardian": false,// 禁止攻打地牢守护者，与old man对话将会被立即传送到出生点</span><br><span class="line">  "DisableClownBombs": false,// 禁止小丑扔炸弹</span><br><span class="line">  "DisableSnowBalls": false,// 禁止使用雪球</span><br><span class="line">  "ChatFormat": "&#123;1&#125;&#123;2&#125;&#123;3&#125;: &#123;4&#125;",// 聊天格式【&#123;1&#125;为前缀，&#123;2&#125;为玩家名称，&#123;3&#125;为后缀，&#123;4&#125;为聊天内容】</span><br><span class="line">  "ChatAboveHeadsFormat": "&#123;2&#125;",// 在玩家头顶显示的内容【参考上一条】</span><br><span class="line">  "ForceTime": "normal",// THE WORLD！【normal表示昼夜正常交替，day表示出现极昼现象，night表示出现极夜现象】</span><br><span class="line">  "TileKillThreshold": 60,// 一秒挖掘，破坏物块的上限，否则将被冻结【可以用来检测外挂，下同】</span><br><span class="line">  "TilePlaceThreshold": 20,// 一秒摆放物块的上限</span><br><span class="line">  "TileLiquidThreshold": 15,// 一秒释放液体的上限</span><br><span class="line">  "ProjectileThreshold": 50,// 一秒使用弹药数量的上限【包括魔法攻击】</span><br><span class="line">  "HealOtherThreshold": 50,// 不明</span><br><span class="line">  "ProjIgnoreShrapnel": true,// 计算弹药使用上限是否忽略爆炸产生的碎片</span><br><span class="line">  "RequireLogin": false,// 是否开启强制注册登录</span><br><span class="line">  "DisableInvisPvP": false,// PVP状态下是否使隐身药水失效</span><br><span class="line">  "MaxRangeForDisabled": 10,// 被冻结后最大移动距离</span><br><span class="line">  "ServerPassword": "",// 服务器的密码，不设置表示无密码</span><br><span class="line">  "RegionProtectChests": true,// 领地内的箱子是否受到保护，PVE服务器强烈建议设置成true</span><br><span class="line">  "RegionProtectGemLocks": true,// 不明</span><br><span class="line">  "DisableLoginBeforeJoin": false,// 是否允许进入服务器前自动登录（在连接服务器后，但是人物还没出现在游戏里前）</span><br><span class="line">  "DisableUUIDLogin": false,// 是否禁止UUID登录</span><br><span class="line">  "KickEmptyUUID": false,// 是否移除（kick）空UUID的玩家</span><br><span class="line">  "AllowRegisterAnyUsername": false,// 是否允许注册任何用户名，PVE服务器强烈建议设置成false</span><br><span class="line">  "AllowLoginAnyUsername": true,// 是否允许登录任何用户名</span><br><span class="line">  "MaxDamage": 1175,// 玩家所受到的最大伤害点数，超过这个数值会被冻结</span><br><span class="line">  "MaxProjDamage": 1175,// 玩家受到弹药的最大伤害点数，同上</span><br><span class="line">  "KickOnDamageThresholdBroken": false,// 不明</span><br><span class="line">  "IgnoreProjUpdate": false,// 不明</span><br><span class="line">  "IgnoreProjKill": false,// 不明</span><br><span class="line">  "IgnoreNoClip": false,// 不明</span><br><span class="line">  "AllowIce": false,// 是否允许没有建筑权限的玩家用寒冰法杖放冰砖</span><br><span class="line">  "AllowCrimsonCreep": true,// 是否允许血腥之地扩散，PVE强烈建议设置成false，下同</span><br><span class="line">  "AllowCorruptionCreep": true,// 是否允许腐化之地扩散</span><br><span class="line">  "AllowHallowCreep": true,// 是否允许腐化之地扩散</span><br><span class="line">  "StatueSpawn200": 3,// 200物块以内的雕像最大刷怪量</span><br><span class="line">  "StatueSpawn600": 6,// 600物块以内的雕像最大刷怪量</span><br><span class="line">  "StatueSpawnWorld": 10,// 全世界内的雕像最大刷怪量</span><br><span class="line">  "PreventBannedItemSpawn": false,// 是否禁止用item指令和give指令获得被封禁（ban）掉的物品</span><br><span class="line">  "PreventDeadModification": true,// 不明</span><br><span class="line">  "EnableChatAboveHeads": false,// 在玩家说话时，他们头上是否会显示说的那句话</span><br><span class="line">  "ForceXmas": false,// 是否开启圣诞节</span><br><span class="line">  "AllowAllowedGroupsToSpawnBannedItems": false,// 是否允许有权限使用被禁物品的用户组通过指令获得被禁物品</span><br><span class="line">  "IgnoreChestStacksOnLoad": false,// 加载地图的时候是否检测箱子里物品堆叠上限</span><br><span class="line">  "LogPath": "tshock",// 日志文件存放路径</span><br><span class="line">  "UseSqlLogs": false,// 不明</span><br><span class="line">  "RevertToTextLogsOnSqlFailures": 10,// 不明</span><br><span class="line">  "PreventInvalidPlaceStyle": true,// 预防非法放置方式</span><br><span class="line">  "BroadcastRGB": [</span><br><span class="line">    127,</span><br><span class="line">    255,</span><br><span class="line">    <span class="number">212</span></span><br><span class="line">  ],// 系统广播颜色</span><br><span class="line">  "ApplicationRestTokens": &#123;&#125;,// 不明</span><br><span class="line">  "ReservedSlots": 1,// 预留给管理员的通道数量</span><br><span class="line">  "LogRest": false,// 日志是否刷新【？】</span><br><span class="line">  "RespawnSeconds": 5,// 玩家死亡后复活时间/秒</span><br><span class="line">  "RespawnBossSeconds": 10,// 一秒刷漆上限</span><br><span class="line">  "TilePaintThreshold": 15,// 不明</span><br><span class="line">  "ForceHalloween": false,// 是否开启万圣节</span><br><span class="line">  "AllowCutTilesAndBreakables": false,</span><br><span class="line">  "CommandSpecifier": "/",// 指令标志，在聊天框里首位输入该符号视为指令</span><br><span class="line">  "CommandSilentSpecifier": ".",</span><br><span class="line">  "KickOnHardcoreDeath": false,</span><br><span class="line">  "BanOnHardcoreDeath": false,</span><br><span class="line">  "HardcoreBanReason": "Death results in a ban",</span><br><span class="line">  "HardcoreKickReason": "Death results in a kick",</span><br><span class="line">  "AnonymousBossInvasions": true,</span><br><span class="line">  "MaxHP": 500,</span><br><span class="line">  "MaxMP": 200,</span><br><span class="line">  "SaveWorldOnLastPlayerExit": true,</span><br><span class="line">  "BCryptWorkFactor": 7,</span><br><span class="line">  "MinimumPasswordLength": 4,</span><br><span class="line">  "RESTMaximumRequestsPerInterval": 5,</span><br><span class="line">  "RESTRequestBucketDecreaseIntervalMinutes": 1,</span><br><span class="line">  "RESTLimitOnlyFailedLoginRequests": true,</span><br><span class="line">  "ShowBackupAutosaveMessages": true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Tshock所有指令详细介绍"><a href="#Tshock所有指令详细介绍" class="headerlink" title="Tshock所有指令详细介绍"></a>Tshock所有指令详细介绍</h1><ol>
+<li><p>指令：auth</p>
+<blockquote>
+<p>开服后服主需要进入服务器，但是如何获得管理权限呢？开服后会发现服务器有一横黄色字体，其中/auth xxxxxxxx最为瞩目【一般都为八位数，可通过tshock的auth.txt文件夹修改密码】，在服务器里输入auth命令＋密码即可获得临时超级管理权限，如何获得永久管理权限呢？以后会说到。<br>auth xxxxxxxx –获取临时管理权限，退出服务器后权限重置</p>
+</blockquote>
+</li>
+<li><p>指令：auth-verify</p>
+<blockquote>
+<p>服主获得临时超级管理权限之后建议马上输入此命令，这样以后就不能通过auth获得管理权限了，以防黑客获取权限【如果黑客真的来了…估计这命令也没用】，在这之前一定要获取永久管理权限，否则下次登录服务器就无法获取管理权限了。想要再次可以使用auth指令获取临时管理权限可以删掉tshock目录下的auth.lck文件解除。<br>auth-verify –禁止使用auth指令</p>
+</blockquote>
+</li>
+<li><p>指令：user</p>
+<blockquote>
+<p>管理玩家以及用户组<br>子命令：<br>user add 玩家名字 密码 用户组 –添加玩家到某一个用户组<br>user del 玩家名字 –删除玩家信息<br>user password 玩家名字 新密码 –更改某一玩家的密码【这个真…】<br>user group 玩家名字 用户组 –更改某一玩家的用户组<br>备注：user命令可以更改玩家的信息，极为重要，如无特殊情况，请不要把该命令权限交给他人</p>
+</blockquote>
+</li>
+<li><p>指令：login</p>
+<blockquote>
+<p>一般服务器都会设置登录这个选项，进入服务器后输入以下子命令登录至服务器。<br>子命令：<br>login –直接使用角色名称和UUID登录<br>login 密码 –使用游戏角色名称和密码登录<br>login 用户名 密码 –使用用户名和密码登录<br>备注：请牢记您的密码。</p>
+</blockquote>
+</li>
+<li><p>指令：password</p>
+<blockquote>
+<p>用于修改用户的登录密码。<br>password 旧密码 新密码 –修改登录密码<br>备注：请牢记您更改后的密码。</p>
+</blockquote>
+</li>
+<li><p>指令：register</p>
+<blockquote>
+<p>用于注册服务器用户账号。<br>子命令：<br>register 密码 –使用游戏玩家名称当做用户名和密码注册<br>register 用户名 密码 –使用自己设置的用户名和密码注册<br>备注：请牢记注册后的密码并尽量弄复杂。</p>
+</blockquote>
+</li>
+<li><p>指令：ban</p>
+<blockquote>
+<p>封禁掉某玩家。<br>子命令：（【】内内容选填）<br>ban add 玩家名称 【理由】 –永久封禁一个用户<br>ban addip IP地址 【理由】 –永久封禁一个IP地址，通过此IP地址进入的玩家将被禁止进服务器<br>ban addtemp 玩家名称 时间 【理由】 –限时性封禁一个用户<br>ban list 【页码】 –显示正在被封禁的用户列表，不输入页码默认显示第一页<br>ban listip 【页码】 –显示正在被封禁的IP地址列表<br>相关命令：<br>del 用户名 –解封一个用户<br>delip IP地址 –解封一个IP地址<br>备注：第三条子命令所涉及到的时间的格式为【1d1h1m1s】，其中d=day代表天，h=<br>hour代表小时，m代表分钟，s代表秒，如果想封禁玩家123长达一天三小时的时间那么格式为：<br>ban addtemp 123 1d3h 就是想封禁你你能把我咋滴<br>无视理由= =</p>
+</blockquote>
+</li>
+<li><p>指令：broadcast</p>
+<blockquote>
+<p>系统广播命令，但不知道能不能定时播放，貌似有个插件可以做到。<br>broadcast 内容 –播放广播<br>相关命令：<br>bc 内容 –也是播放广播，只不过是broadcast的缩写<br>say 内容 –还是播放广播</p>
+</blockquote>
+</li>
+<li><p>指令：displaylogs</p>
+<blockquote>
+<p>是否保存服务器日志，不修改config的情况下默认目录为tshock<br>【如以后有些指令我没有给出用法，即直接输入生效】</p>
+</blockquote>
+</li>
+<li><p>指令：group</p>
+<blockquote>
+<p>管理用户组。<br>子命令：<br>group add 新的用户组名称 权限 –添加一个新的用户组并给其初始权限<br>group addperm 用户组 权限 –给某一用户组添加权限<br>group color 用户组 颜色 –改变某一用户组的聊天颜色【颜色为RGB值，具体度娘】<br>group del 用户组名称 –删除一个用户组<br>group delperm 用户组名称 权限 –删除某一用户组的某个权限<br>group list 【页码】–显示所有已设置的用户组<br>group listperm 用户组名称 【页码】 –显示某一用户组的所有权限<br>group parent 用户组名称 父亲用户组名称 –修改某一用户组的父亲组<br>group prefix 用户组名称 前缀 –设置某一用户组聊天前缀<br>group suffix 用户组名称 后缀 –设置某一用户组聊天后缀</p>
+<blockquote>
+<p>备注：这里的父亲用户组值得一提，如果用户组123为456的父亲用户组，那么456将继承123的全部权限，在tshock默认的用户组中，guest是最没权限但是所有用户组的父亲组，故所有用户组都将继承他的权限。如果123和456都含有同一个权限，只删除456的那个权限的话是无法彻底删去的，因为他还有123这个父亲撑腰。所以要完全撤掉这个权限需要撤销掉123的这个权限、如果123还有父亲用户组的话那就要继续找继续找，知道找到最年长的一辈才能彻底删掉这个权限。<br>备注2：【<em>】代表所有权限，可以说超级管理员只有一个权限，那就是【</em>】</p>
+</blockquote>
+</blockquote>
+</li>
+<li><p>指令：itemban</p>
+<blockquote>
+<p>封禁掉某一物品。<br>子命令：<br>itemban add 物品英文名称或物品ID–封禁掉某一物品<br>itemban allow 物品英文名称或物品IP 用户组名称–允许某一用户组使用该被封禁的物品<br>itemban del 物品英文名称或物品ID–将某一物品解除封禁<br>itemban disallow 物品英文名称或物品ID 用户组名称–取消某一用户组对该封禁物品的使用权限<br>itemban list 【页码】–列出所有被封禁掉的物品<br>备注：没有权限使用该物品的用户组会被冻结。</p>
+</blockquote>
+</li>
+<li><p>指令：region</p>
+<blockquote>
+<p>设置领地，极为重要！<br>子命令：<br>region set 1/2 –设置临时边界点。<br>region clear –清除设置的临时边界点<br>region define 名字 –给刚才设置的临时边界起名，将其变成私有领地。<br>region delete 领地名称 –删除某一个私有领地<br>region name -显示当前位置的领地名称<br>region list 【页码】 –显示当前所有领地<br>region resize 领地名称 –重新设置领地大小<br>region allow 玩家名称 领地名称 –将某一领地分享给另一位玩家<br>region remove 玩家名称 领地名称 –取消将某一领地分享给某位玩家<br>region allowg 用户组名称 领地名称 –将某一领地分享给某一个用户组<br>region removeg 用户组名称 领地名称 –将某一领地的分享权限取消至某个用户组<br>region info 领地名称 –显示领地信息<br>region protect 领地名称 true/false –是否开启保护某个领地<br>region z 领地名称 优先等级 –设置领地的优先权<br>备注：如何设置领地？<br>先输入region set 1，之后使用稿子在一个长方形的左上角敲一下,<br>输入region set 2，之后使用稿子在同一个长方形的右下角敲一下<br>输入region define 名称 设置成自己的私有领地吧！<br>私有领地不可被除领主之外的人破坏或建筑，除非共享给某个玩家。</p>
+</blockquote>
+</li>
+<li><p>指令：kick</p>
+<blockquote>
+<p>将玩家移除服务器，克熊孩子专用【其实ban更好…】。<br>kick 玩家名称 【理由】</p>
+</blockquote>
+</li>
+<li><p>指令：projban</p>
+<blockquote>
+<p>在服务器里封禁某种弹药使用权限。<br>子命令：<br>projban add 弹药ID –封禁某种弹药<br>projban allow 弹药ID 用户组名称 –允许某一用户组使用该被封禁的弹药<br>projban del 弹药ID –恢复某一个弹药的使用权限<br>projban disallow 弹药ID 用户组名称 –解除某一用户组使用某个弹药的权限<br>projban list –列出所有被封禁的弹药</p>
+</blockquote>
+</li>
+<li><p>指令：mute</p>
+<blockquote>
+<p>禁言某玩家<br>mute 用户名 【理由】–禁言某位玩家<br>相关命令：<br>unmute 用户名 –解除某位玩家的禁言</p>
+</blockquote>
+</li>
+<li><p>指令：savessc</p>
+<blockquote>
+<p>手动保存服务器的玩家存档。</p>
+</blockquote>
+</li>
+<li><p>指令：tempgroup</p>
+<blockquote>
+<p>就是在本次服务器关服前设置用户组，就是说，在本次关服前玩家都是看tempgroup的。比group要更前面，所以如果玩家被设置有tempgroup的话，他的权限是按照他的tempgroup来算的，而不是他的group</p>
+</blockquote>
+</li>
+<li><p>指令：userinfo</p>
+<blockquote>
+<p>查询某一用户信息<br>usernfo 玩家姓名<br>相关命令：<br>ui 玩家姓名 –ui就是userinfo的简写</p>
+</blockquote>
+</li>
+<li><p>指令：annoy</p>
+<blockquote>
+<p>骚扰【shenmegui】一个玩家。<br>annoy 玩家名称 骚扰时间<br>备注：怎么骚扰的，可以亲自试验一下，23333</p>
+</blockquote>
+</li>
+<li><p>指令：confuse</p>
+<blockquote>
+<p>让某个玩家不再受控制。【即，方向箭无法正确的控制角色移动】【这命令真NB】<br>confuse 玩家名称<br>备注：对同一个玩家输入两次该命令将解除不受控制状态。</p>
+</blockquote>
+</li>
+<li><p>指令：rocket</p>
+<blockquote>
+<p>在某位玩家旁边发射一个火箭。<br>rocket 玩家名称</p>
+</blockquote>
+</li>
+<li><p>指令：firework</p>
+<blockquote>
+<p>在某位玩家身边发射烟花。<br>firework 玩家名称 【red/green/blue/yellow】</p>
+</blockquote>
+</li>
+<li><p>指令：checkupdates</p>
+<blockquote>
+<p>检查服务器【tshock】的更新状况。<br>指令：off<br>介绍：关闭服务器并且保存服务器数据。<br>相关命令：<br>exit –同上</p>
+</blockquote>
+</li>
+<li><p>指令：off-nosave</p>
+<blockquote>
+<p>关闭服务器但不保存服务器数据。服务器被熊炸了之后立即使用该命令，不要犹豫。<br>相关命令：<br>exit-nosave –真是没事闲着==</p>
+</blockquote>
+</li>
+<li><p>指令：reload</p>
+<blockquote>
+<p>重新载入config文件，不必重新启动服务器去加载config文件了，但是部分配置还必须重启服务器才能生效。</p>
+</blockquote>
+</li>
+<li><p>指令：restart</p>
+<blockquote>
+<p>重启服务器。</p>
+</blockquote>
+</li>
+<li><p>指令：serverpassword</p>
+<blockquote>
+<p>修改服务器的密码。</p>
+</blockquote>
+</li>
+<li><p>指令：version</p>
+<blockquote>
+<p>显示当前tshock版本信息</p>
+</blockquote>
+</li>
+<li><p>指令：whitelist</p>
+<blockquote>
+<p>管理服务器白名单【需在config配置文件里把白名单打开】</p>
+</blockquote>
+</li>
+<li><p>指令：give</p>
+<blockquote>
+<p>给予玩家一个物品。<br>give 物品英文名称或物品ID 玩家名称（可以是自己） 【数量】【英文前缀（武器用）】<br>相关命令：<br>g 物品英文名称或物品ID 玩家名称（可以是自己） 【数量】【英文前缀（武器用）】 –即give的简写</p>
+</blockquote>
+</li>
+<li><p>指令：item</p>
+<blockquote>
+<p>给予自己一个物品。<br>item 物品英文名称或物品ID【数量】【英文前缀（武器用）】<br>相关命令：<br>i 物品英文名称或物品ID【数量】【英文前缀（武器用）】–不解释</p>
+</blockquote>
+</li>
+<li><p>指令：butcher</p>
+<blockquote>
+<p>杀死当前服务器里的怪物或可爱的npc。<br>butcher 怪物id/npc<br>备注：不写ID将表示杀死所有除了玩家的生物。</p>
+</blockquote>
+</li>
+<li><p>指令：invade</p>
+<blockquote>
+<p>开启军团入侵指令！<br>invade 入侵军团<br>备注：入侵军团的类型有：goblin【哥布林】，snowman【雪人军团】，pirate【海盗】。另外，南瓜月，血月，霜月有其他指令。</p>
+</blockquote>
+</li>
+<li><p>指令：maxspawn</p>
+<blockquote>
+<p>设置怪物最大刷新量，但只是临时的。<br>备注：关闭服务器后失效，永久修改最大怪物刷新量请去修改config配置文件。</p>
+</blockquote>
+</li>
+<li><p>指令：spawnboss</p>
+<blockquote>
+<p>嘛，稍微懂点英文的都知道是召唤boss的指令~<br>spawnboss BOSS名称 【数量】<br>相关命令：<br>sb BOSS名称 【数量】 –简写不解释，但是这简写简直233<br>备注：boss类型主要有：eye-克苏鲁之眼/eater-世界吞噬者/wof-血肉之墙/queen-蜂后/brain-克苏鲁之脑/king-史莱姆王/twins-双子魔眼/prime-机械骷髅王/skeletron-骷髅王/golem-石巨人/plantera-世纪之花/destroyer-世界毁灭者/duke-猪鲨公爵/all-所有种类boss，若没有填数量一空则默认为一。</p>
+</blockquote>
+</li>
+<li><p>指令：spawnmob</p>
+<blockquote>
+<p>在你的身边召唤一个怪物或者NPC。<br>spawnmob 怪物ID或NPC的ID 【数量】<br>相关命令：<br>sm 怪物ID或NPC的ID 【数量】 –如果召唤一堆NPC会发生什么？</p>
+</blockquote>
+</li>
+<li><p>指令：spawnrate</p>
+<blockquote>
+<p>设置怪物刷新时间间隔，同样是临时性的，需要通过config配置文件设置永久性的。</p>
+</blockquote>
+</li>
+<li><p>指令：pumpkin</p>
+<blockquote>
+<p>介绍：召唤南瓜月！！！<br>备注：本人没有测试白天是否可以使用指令召唤南瓜月。</p>
+</blockquote>
+</li>
+<li><p>指令：home</p>
+<blockquote>
+<p>回到自己设置的出生点【床】。</p>
+</blockquote>
+</li>
+<li><p>指令：spawn</p>
+<blockquote>
+<p>介绍：回到地图【服务器】的出生点。</p>
+</blockquote>
+</li>
+<li><p>指令：tp</p>
+<blockquote>
+<p>神の指令，可以传送到别人身边。<br>子命令：<br>tp 玩家名称 –传送到某人身边。<br>tp x坐标 y坐标 –传送到特定的一个坐标，可以通过GPS查看坐标。</p>
+</blockquote>
+</li>
+<li><p>指令：tpallow</p>
+<blockquote>
+<p>设置别人是否可以传送到你身边。</p>
+</blockquote>
+</li>
+<li><p>指令：tphere</p>
+<blockquote>
+<p>将别人传送到你身边，有可能侵犯他人隐私。</p>
+</blockquote>
+</li>
+<li><p>tphere 玩家名称</p>
+<blockquote>
+<p>如果玩家名称填写all或者【*】，则表示所有玩家。</p>
+</blockquote>
+</li>
+<li><p>指令：antibuild</p>
+<blockquote>
+<p>是否开启禁止建筑【破坏】模式，开启后无法破坏地图上的任何东西，但也是临时性的。</p>
+</blockquote>
+</li>
+<li><p>指令：tpnpc</p>
+<blockquote>
+<p>传送到某个npc，权限为“tshock.tp.npc”</p>
+</blockquote>
+</li>
+<li><p>指令：tppos</p>
+<blockquote>
+<p>传送到地点，权限为“tshock.tp.pos”。</p>
+</blockquote>
+</li>
+<li><p>指令：pos</p>
+<blockquote>
+<p>获取当前地点，权限为“tshock.tp.getpos”</p>
+</blockquote>
+</li>
+<li><p>指令：bloodmoon</p>
+<blockquote>
+<p>开启血月！</p>
+</blockquote>
+</li>
+<li><p>指令：grow</p>
+<blockquote>
+<p>在你的旁边生长一颗植株，可以达到无限资源的目的。【本来就可以无线资源吧..】<br>grow tree/epictree/mushroom/cactus/herb<br>备注：这几个英文单词指得分别是：树，棕桐树，蘑菇，仙人掌，草药。</p>
+</blockquote>
+</li>
+<li><p>指令：dropmeteor</p>
+<blockquote>
+<p>使用该指令将会随机生成一个陨石！！！请在主城周围使用该命令否则后果自负。</p>
+</blockquote>
+</li>
+<li><p>指令：eclipse</p>
+<blockquote>
+<p>开启日食，配合config配置修改成极昼模式可以达到永久日食的目的。</p>
+</blockquote>
+</li>
+<li><p>指令：forcexmas</p>
+<blockquote>
+<p>是否开启圣诞模式，注意，有是否选项！<br>forcexmas true/false</p>
+</blockquote>
+</li>
+<li><p>指令：fullmoon</p>
+<blockquote>
+<p>使用该指令开启满月！</p>
+</blockquote>
+</li>
+<li><p>指令：hardmode</p>
+<blockquote>
+<p>如当前地图处于简单模式【肉山前】，使用该指令立刻转至困难模式【肉山后】，反亦之。</p>
+</blockquote>
+</li>
+<li><p>指令：protectspawn</p>
+<blockquote>
+<p>开启临时保护出生点模式，范围在config配置文件里修改，不过也只是临时性的。</p>
+</blockquote>
+</li>
+<li><p>指令：rain</p>
+<blockquote>
+<p>是否开启或停止下雨。<br>rain stop/start –前者停止正在下的雨，后者则开始下雨</p>
+</blockquote>
+</li>
+<li><p>指令：setspawn</p>
+<blockquote>
+<p>将你脚下踩得这块方块设置为地图的出生点，这个是永久的！但是仍然可以输入该指令改变地图出生点。</p>
+</blockquote>
+</li>
+<li><p>指令：settle</p>
+<blockquote>
+<p>立刻强制所有液体平衡。</p>
+</blockquote>
+</li>
+<li><p>指令：wind</p>
+<blockquote>
+<p>改变风速<br>wind 数值</p>
+</blockquote>
+</li>
+<li><p>指令：time</p>
+<blockquote>
+<p>设置地图的时间<br>time day/night/dusk/noon/midnight<br>备注：day代表白天，游戏时间为4:00整，这个时间点表示刚刚天亮。night表示傍晚，时间未知。dusk代表黄昏，表示刚刚步入夜晚。noon表示正午，太阳当空照~一天中最亮的时候。midnight代表午夜。</p>
+</blockquote>
+</li>
+<li><p>指令：world</p>
+<blockquote>
+<p>显示当前地图信息</p>
+</blockquote>
+</li>
+<li><p>指令：buff</p>
+<blockquote>
+<p>给予自己一种buff，可以自定义时间哦！<br>buff buff序号或者英文名称 【持续的时间】<br>备注：时间选项不添加默认为60秒。</p>
+</blockquote>
+</li>
+<li><p>指令：clear</p>
+<blockquote>
+<p>清理以你为O点的半径中的怪物/物品/弹药。<br>clear item/npc/projectile 【半径】<br>备注：半径不填写大概默认为全部。npc代表怪物，第三者代表弹药，item代表掉落物品。</p>
+</blockquote>
+</li>
+<li><p>指令：gbuff</p>
+<blockquote>
+<p>给予某个玩家一种buff。<br>gbuff 玩家名称 buff名称或buffID 【时间】<br>相关指令：<br>buffplayer 玩家名称 buff名称或buffID 【时间】<br>备注：时间一栏不填写默认为60秒。</p>
+</blockquote>
+</li>
+<li><p>指令：godmode</p>
+<blockquote>
+<p>这将会给一个人上帝的权限！！！<br>godmode –给予自己上帝的权利！<br>godmode 用户名 –给予一个玩家上帝的权利！<br>上帝的权利：当你收到任何伤害【这种伤害会减少你的体力】的时候，你马上恢复你血量上限的血量【比如你有200点血量上限，你收到伤害时，会立刻回满200点血。】。可是如果该伤害是致命的，仍然会死亡。【比如地牢守护者】</p>
+</blockquote>
+</li>
+<li><p>指令：heal</p>
+<blockquote>
+<p>治疗一个玩家【包括hp和mp】<br>heal –治疗自己<br>heal 玩家名称 –治疗某一个玩家</p>
+</blockquote>
+</li>
+<li><p>指令：kill</p>
+<blockquote>
+<p>干死某位玩家233。<br>kill 玩家名称 –杀掉玩家</p>
+</blockquote>
+</li>
+<li><p>指令：me</p>
+<blockquote>
+<p>跟自己卖萌=￣ω￣=。<br>me 聊天内容</p>
+</blockquote>
+</li>
+<li><p>指令：party</p>
+<blockquote>
+<p>组队聊天内容。<br>party 聊天内容 –其中的组队是指pvp的队伍颜色。<br>相关指令：<br>p 聊天内容 –可以更加快捷的跟组队聊天</p>
+</blockquote>
+</li>
+<li><p>指令：reply</p>
+<blockquote>
+<p>回复某人私聊给你的话【亦可给某人发送私信】。<br>reply 私信内容<br>相关命令：<br>r 聊天内容</p>
+</blockquote>
+</li>
+<li><p>指令：slap</p>
+<blockquote>
+<p>扇别人一巴掌！并强制造成五点血量伤害，据说有击退效果。<br>slap 玩家姓名<br>slap+名字+伤害数值 揍某人多少滴血</p>
+</blockquote>
+</li>
+<li><p>指令：stats</p>
+<blockquote>
+<p>显示当前服务器的信息。</p>
+</blockquote>
+</li>
+<li><p>指令：warp</p>
+<blockquote>
+<p>管理当前服务器所开的地图的传送点，不同的地图有不同的传送点管理。<br>子命令：<br>warp 传送点 –传送到该传送点，服务器的注册用户默认拥有该指令。<br>warp add 传送点名称 –在当前脚下设置一个传送点并命名，所有传送点都是公共的。<br>warp del 传送点名称 –删除某一传送点。<br>warp list 【页数】 –显示当前服务器开的地图所设置的所有传送点。<br>warp send 玩家名称 传送点名称 –将某一用户立即强制传送到某一传送点。<br>warp hide 传送点名称 ture/false –设置传送点是否显示，ture为是，反之。<br>备注：warp可以在任意一个地方建立传送点，也可以用来设置服务器活动传送点，所以如无特殊情况，请不要授予注册玩家管理传送点的权限。</p>
+</blockquote>
+</li>
+<li><p>指令：whisper</p>
+<blockquote>
+<p>发送一种私聊信息给予某位玩家。<br>whisper 聊天内容 –私聊某位玩家。<br>相关命令：<br>tell 聊天内容 –还是私聊某位玩家。<br>w 聊天内容 –whisper的简写。</p>
+</blockquote>
+</li>
+<li><p>指令：aliases</p>
+<blockquote>
+<p>查询某一命令的相同命令【比如上一条指令的whisper，就有两个相同命令，即tell和w】。</p>
+</blockquote>
+</li>
+<li><p>指令：help</p>
+<blockquote>
+<p>查询当前用户组可供使用的命令。</p>
+</blockquote>
+</li>
+<li><p>指令：motd</p>
+<blockquote>
+<p>显示服务器设置的欢迎信息。</p>
+</blockquote>
+</li>
+<li><p>指令：playing</p>
+<blockquote>
+<p>显示当前服务器所有在线玩家。<br>相关命令：<br>online<br>who</p>
+</blockquote>
+</li>
+<li><p>指令：rule</p>
+<blockquote>
+<p>显示服务器设置的规则！新手最好先看服规，否则后果自负。</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="Tshock内置权限详解"><a href="#Tshock内置权限详解" class="headerlink" title="Tshock内置权限详解"></a>Tshock内置权限详解</h1><blockquote>
+<p>从此节开始，我将为大家介绍tshock原版权限详解，这些权限会用在group addperm 中使用，且特别重要。</p>
+</blockquote>
+<h2 id="【tshock-account系列权限】"><a href="#【tshock-account系列权限】" class="headerlink" title="【tshock.account系列权限】"></a>【tshock.account系列权限】</h2><blockquote>
+<p>备注：所有原版tshock权限的第一个单词均有tshock，没有特例。</p>
+</blockquote>
+<ol>
+<li><p>权限：tshock.account.register</p>
+<blockquote>
+<p>允许用户组内的用户可以在服务器内注册账号。<br>备注：使用方法：group addperm 用户组名称 tshock.account.register，这样就给予了一个用户组可以注册的权限，但是不要忘记父亲用户组哦，子用户组可以继承父用户组的所有权限。</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.account.login</p>
+<blockquote>
+<p>允许用户组内的用户可以登录账号。<br>备注：这条和上面一条最好不要做任何改动。</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.account.changepassword</p>
+<blockquote>
+<p>允许用户组可以修改自己账号的密码。</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.admin.warp</p>
+<blockquote>
+<p>介绍：可以管理warp点系列。对应的还有一个指令是玩家使用warp点的，不要混了。</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.admin.itemban</p>
+<blockquote>
+<p>介绍：可以封禁某种物品的使用权限</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.admin.projectileban</p>
+<blockquote>
+<p>介绍：可以封禁某种弹药的使用权限</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.admin.group</p>
+<blockquote>
+<p>介绍：可以使用group系列命令</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.admin.region</p>
+<blockquote>
+<p>介绍：可以使用region【圈地】系列指令</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.admin.mute</p>
+<blockquote>
+<p>介绍：可以禁言某人</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.admin.seeplayerids</p>
+<blockquote>
+<p>可以查看当前服务器玩家的人物信息。</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.admin.savessi</p>
+<blockquote>
+<p>可以被服务器保存背包数据<br>备注：对于那些临时玩家和用大号进开荒服的玩家们，可以考虑单独弄一个用户组并将此权限删除。</p>
+</blockquote>
+</li>
+<li><p>权限： tshock.admin.tempgroup</p>
+<blockquote>
+<p>介绍：可以使用tempgroup指令</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.admin.broadcast</p>
+<blockquote>
+<p>介绍：可以使用say等指令进行系统【服务器】广播</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.admin.userinfo</p>
+<blockquote>
+<p>可以获取当前在线的用户信息【可能包括IP地址】</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="【tshock-buff】系列权限"><a href="#【tshock-buff】系列权限" class="headerlink" title="【tshock.buff】系列权限"></a>【tshock.buff】系列权限</h2><ol>
+<li><p>权限：tshock.buff.self</p>
+<blockquote>
+<p>可以给自己加buff</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.buff.others</p>
+<blockquote>
+<p>可以给其他玩家加buff<br>备注：如果一个用户组同时拥有以上两条权限，那么就可以使用buff系列指令。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="【tshock-cfg系列权限】"><a href="#【tshock-cfg系列权限】" class="headerlink" title="【tshock.cfg系列权限】"></a>【tshock.cfg系列权限】</h2><ol>
+<li><p>权限：tshock.cfg.maintenance</p>
+<blockquote>
+<p>可以关闭或重新启动服务器<br>备注：任何时候，都不要把这条权限给除超级管理之外的任何用户组！！！任何时候，都不要把这条权限给除超级管理之外的任何用户组！！！任何时候，都不要把这条权限给除超级管理之外的任何用户组！！！【很重要所以说三遍】</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.cfg.whitelist</p>
+<blockquote>
+<p>可以管理白名单</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.cfg.password</p>
+<blockquote>
+<p>可以修改服务器密码</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.cfg.reload</p>
+<blockquote>
+<p>可以使用指令重新加载config配置文件</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.cfg.updateplugins</p>
+<blockquote>
+<p>可以使用指令更新tshock</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="【tshock-ignore系列权限】"><a href="#【tshock-ignore系列权限】" class="headerlink" title="【tshock.ignore系列权限】"></a>【tshock.ignore系列权限】</h2><ol>
+<li>权限：tshock.ignore.removetile<blockquote>
+<p>介绍：是否让该用户组免于受到挖掘物块速度上限的检测</p>
+</blockquote>
+</li>
+<li>权限：tshock.ignore.placetile<blockquote>
+<p>介绍：是否让该用户组免于受到物块摆放速度上限的检测</p>
+</blockquote>
+</li>
+<li>权限：tshock.ignore.liquid<blockquote>
+<p>介绍：是否让该用户组免于受到液体摆放速度上限的检测</p>
+</blockquote>
+</li>
+<li>权限：tshock.ignore.projectile<blockquote>
+<p>介绍：是否让该用户组免于受到弹药伤害上限的检测</p>
+</blockquote>
+</li>
+<li>权限：tshock.ignore.paint<blockquote>
+<p>介绍：是否让该用户组免于受到喷漆速度上限的检测</p>
+</blockquote>
+</li>
+<li>权限：tshock.ignore.noclip<blockquote>
+<p>介绍：是否让该用户组免于受到锤击物块上限的检测</p>
+</blockquote>
+</li>
+<li>权限：tshock.ignore.itemstack<blockquote>
+<p>介绍：是否让该用户组免于受到物品堆叠上限的检测</p>
+</blockquote>
+</li>
+<li>权限：tshock.ignore.damage<blockquote>
+<p>介绍：是否让该用户组免于受到伤害上限的检测</p>
+</blockquote>
+</li>
+<li>权限：tshock.ignore.ssi<blockquote>
+<p>介绍：是否让该用户组免于受到背包的检测</p>
+</blockquote>
+</li>
+<li>权限：tshock.ignore.dropbanneditem<blockquote>
+<p>介绍：是否让该用户可以丢弃服务器封禁的物品并不消失</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="【tshock-item系列权限】"><a href="#【tshock-item系列权限】" class="headerlink" title="【tshock.item系列权限】"></a>【tshock.item系列权限】</h2><ol>
+<li>权限：tshock.item.spawn<blockquote>
+<p>介绍：该用户组是否可以使用item指令。</p>
+</blockquote>
+</li>
+<li>权限：tshock.item.usebanned<blockquote>
+<p>介绍：该用户组是否可以使用被服务器封禁的物品。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="【tshock-npc系列权限】"><a href="#【tshock-npc系列权限】" class="headerlink" title="【tshock.npc系列权限】"></a>【tshock.npc系列权限】</h2><ol>
+<li><p>权限：tshock.npc.maxspawns</p>
+<blockquote>
+<p>介绍：是否可以使用指令控制最大刷怪数量</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.npc.spawnrate</p>
+<blockquote>
+<p>介绍：是否可以使用指令控制怪物刷新时间间隔</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.npc.invade</p>
+<blockquote>
+<p>介绍：是否可以开启怪物入侵【比如雪人军团之类的…】</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.npc.spawnboss</p>
+<blockquote>
+<p>介绍：是否可以使用指令召唤boss</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.npc.rename</p>
+<blockquote>
+<p>介绍：是否可以重新命名NpC</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.npc.spawnmob</p>
+<blockquote>
+<p>介绍：是否可以使用指令召唤怪物</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.npc.summonboss</p>
+<blockquote>
+<p>介绍：是否可以使用物品召唤boss</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.npc.butcher</p>
+<blockquote>
+<p>介绍：是否可以使用指令杀死怪物【butcher指令】</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.npc.startinvasion</p>
+<blockquote>
+<p>介绍：是否可以使用物品召唤军团入侵【比如雪人军团之类的…】</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="【-tshock-superadmin系列权限】"><a href="#【-tshock-superadmin系列权限】" class="headerlink" title="【 tshock.superadmin系列权限】"></a>【 tshock.superadmin系列权限】</h2><ol>
+<li>权限：tshock.superadmin.authverify<blockquote>
+<p>介绍：用户组是否可以禁止使用auth指令获取临时管理员权限</p>
+</blockquote>
+</li>
+<li>权限：tshock.superadmin.user<blockquote>
+<p>介绍：用户组是否可以使用user指令管理用户组<br>【以上两条基本就可以操控整个服务器的权限了，如无特殊情况请不要以上两条权限给予给他人】</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="【tshock-tp系列权限】"><a href="#【tshock-tp系列权限】" class="headerlink" title="【tshock.tp系列权限】"></a>【tshock.tp系列权限】</h2><ol>
+<li><p>权限：tshock.tp.self</p>
+<blockquote>
+<p>介绍：用户组可以使用tp指令【注意，不是系列，仅限tp】</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.tp.others</p>
+<blockquote>
+<p>介绍：用户组可以使用tphere指令</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.tp.block</p>
+<blockquote>
+<p>介绍：使当前用户组的成员成为tp指令的目标时可以阻止他。</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.tp.toall</p>
+<blockquote>
+<p>介绍：可以使用tp指令传送到任何人身边【但是没有测试过是否和tshock.tp.block权限相矛盾】</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.tp.silent</p>
+<blockquote>
+<p>介绍：可以传送到别人身边但没有提示【然并卵】</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.tp.home</p>
+<blockquote>
+<p>介绍：可以使用home指令</p>
+</blockquote>
+</li>
+<li><p>权限：tshock.tp.spawn</p>
+<blockquote>
+<p>介绍：可以使用spawn命令</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="【tshock-world系列权限】"><a href="#【tshock-world系列权限】" class="headerlink" title="【tshock.world系列权限】"></a>【tshock.world系列权限】</h2><ol>
+<li>权限：tshock.world.editspawn<blockquote>
+<p>介绍：使当前用户组是否可以设置临时出生点保护,拥有此权限将可以修改出生点（无视出生点保护）</p>
+</blockquote>
+</li>
+<li>权限：tshock.world.editregion<blockquote>
+<p>介绍：修改领地内的东西（无视领地保护）</p>
+</blockquote>
+</li>
+<li>权限：tshock.world.time.bloodmoon<blockquote>
+<p>介绍：是否可以使用指令开启血月</p>
+</blockquote>
+</li>
+<li>权限：tshock.world.time.pumpkinmoon<blockquote>
+<p>介绍：同上，血月变成南瓜月</p>
+</blockquote>
+</li>
+<li>权限：tshock.world.time.snowmoon<blockquote>
+<p>介绍：霜月【我越来越懒了哈哈哈哈哈哈哈哈哈】</p>
+</blockquote>
+</li>
+<li>权限：tshock.world.grow<blockquote>
+<p>介绍：是否可以使用grow指令</p>
+</blockquote>
+</li>
+<li>权限：tshock.world.hardmode<blockquote>
+<p>介绍：是否可以使用指令改变当前地图的难度【即困难模式和简单模式】</p>
+</blockquote>
+</li>
+<li>权限：tshock.world.movenpc<blockquote>
+<p>介绍：是否可以移动npc房间【开荒服务器建议给予普通玩家此权限】</p>
+</blockquote>
+</li>
+<li>权限：tshock.world.converthardmode<blockquote>
+<p>介绍：是否可以将神圣腐化互相转换</p>
+</blockquote>
+</li>
+<li>权限：tshock.world.setxmas<blockquote>
+<p>介绍：是否可以使用指令开启圣诞节</p>
+</blockquote>
+</li>
+<li>权限：tshock.world.save<blockquote>
+<p>介绍：是否可以使用save指令【注，其中不包括off】</p>
+</blockquote>
+</li>
+<li>权限：tshock.world.settleliquids<blockquote>
+<p>介绍：是否可以使用指令平衡液体</p>
+</blockquote>
+</li>
+<li>权限：tshock.world.info<blockquote>
+<p>介绍：是否可以获取服务器当前开启的地图信息</p>
+</blockquote>
+</li>
+<li>权限：tshock.world.setspawn<blockquote>
+<p>介绍：是否可以重新设置系统出生点</p>
+</blockquote>
+</li>
+<li>权限：tshock.world.time.dropmeteor<blockquote>
+<p>介绍：是否可以使用指令刷新陨石…</p>
+</blockquote>
+</li>
+<li>权限：tshock.world.time.eclipse<blockquote>
+<p>介绍：是否可以使用指令开启日食</p>
+</blockquote>
+</li>
+<li>权限：tshock.world.time.fullmoon<blockquote>
+<p>介绍：是否可以使用指令开启满月模式</p>
+</blockquote>
+</li>
+<li>权限：tshock.world.modify<blockquote>
+<p>介绍：不受禁止破坏指令的影响</p>
+</blockquote>
+</li>
+<li>权限：tshock.world.paint<blockquote>
+<p>介绍：是否可以使用油漆</p>
+</blockquote>
+</li>
+<li>权限：tshock.world.rain<blockquote>
+<p>介绍：是否可以使用指令下雨</p>
+</blockquote>
+</li>
+<li>权限：tshock.world.wind<blockquote>
+<p>介绍：是否可以改变风速？</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="【Tshock原版剩余权限（没有分类）】"><a href="#【Tshock原版剩余权限（没有分类）】" class="headerlink" title="【Tshock原版剩余权限（没有分类）】"></a>【Tshock原版剩余权限（没有分类）】</h2><ol>
+<li>权限：tshock.clear<blockquote>
+<p>介绍：是否可以使用clear指令【注意是clear不是clean】</p>
+</blockquote>
+</li>
+<li>权限：tshock.kill<blockquote>
+<p>介绍：是否可以使用指令干掉某人</p>
+</blockquote>
+</li>
+<li>权限：tshock.reservedslot<blockquote>
+<p>介绍：该用户组的成员进入服务器时，不受最大人数的限制【服务器满员了照样进来，可以用在vip用户组上】</p>
+</blockquote>
+</li>
+<li>权限：tshock.warp<blockquote>
+<p>介绍：是否可以使用warp进行传送【注意，这和tshock.admin.warp权限有所不同，该权限只能利用warp指令进行传送而tshock.admin.warp则是可以使用warp系列的指令，即管理warp传送点】</p>
+</blockquote>
+</li>
+<li>权限：tshock.slap<blockquote>
+<p>介绍：是否可以扇别人一巴掌</p>
+</blockquote>
+</li>
+<li>权限：tshock.whisper<blockquote>
+<p>介绍：是否可以查看当前服务器人物信息</p>
+</blockquote>
+</li>
+<li>权限：tshock.annoy<blockquote>
+<p>介绍：是否可以骚扰别人</p>
+</blockquote>
+</li>
+<li>权限：tshock.heal<blockquote>
+<p>介绍：是否可以通过指令治愈自己</p>
+</blockquote>
+</li>
+<li>权限：tshock.partychat<blockquote>
+<p>介绍：是否可以进行队内聊天【即party和p】</p>
+</blockquote>
+</li>
+<li>权限：tshock.info<blockquote>
+<p>介绍：是否可以看到服务器信息</p>
+</blockquote>
+</li>
+<li>权限：tshock.thirdperson<blockquote>
+<p>介绍：是否可以跟自己卖萌</p>
+</blockquote>
+</li>
+<li>权限：tshock.godmode<blockquote>
+<p>介绍：是否可以使用godmode指令</p>
+</blockquote>
+</li>
+<li>权限：tshock.canchat<blockquote>
+<p>介绍：是否可以聊天【这条权限碉堡了】</p>
+</blockquote>
+</li>
+<li>权限：tshock.projectiles.usebanned【因为projectiles类别的权限就这么一条，我就放在其余权限里了】<blockquote>
+<p>介绍：是否可以使用被封禁【ban】掉的弹药。</p>
 </blockquote>
 </li>
 </ol>
@@ -244,7 +1060,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#自建云服务器"><span class="toc-text">自建云服务器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#泰拉瑞亚服务器指令"><span class="toc-text">泰拉瑞亚服务器指令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Tshock所有指令详细介绍"><span class="toc-text">Tshock所有指令详细介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Tshock内置权限详解"><span class="toc-text">Tshock内置权限详解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#【tshock-account系列权限】"><span class="toc-text">【tshock.account系列权限】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#【tshock-buff】系列权限"><span class="toc-text">【tshock.buff】系列权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#【tshock-cfg系列权限】"><span class="toc-text">【tshock.cfg系列权限】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#【tshock-ignore系列权限】"><span class="toc-text">【tshock.ignore系列权限】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#【tshock-item系列权限】"><span class="toc-text">【tshock.item系列权限】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#【tshock-npc系列权限】"><span class="toc-text">【tshock.npc系列权限】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#【-tshock-superadmin系列权限】"><span class="toc-text">【 tshock.superadmin系列权限】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#【tshock-tp系列权限】"><span class="toc-text">【tshock.tp系列权限】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#【tshock-world系列权限】"><span class="toc-text">【tshock.world系列权限】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#【Tshock原版剩余权限（没有分类）】"><span class="toc-text">【Tshock原版剩余权限（没有分类）】</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
