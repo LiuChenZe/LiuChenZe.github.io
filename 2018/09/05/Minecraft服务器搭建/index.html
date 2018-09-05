@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="好的,我一定来,咕咕咕">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="LiuChenZe" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        Minecraft服务器搭建｜LiuChenZe的Blog
+        
+    </title>
+
+    <link rel="canonical" href="http://LiuChenZe.github.io/2018/09/05/Minecraft服务器搭建/">
+    <!-- 打赏 -->
+    <link rel="stylesheet" href="/css/qrcode.css">
+    
+    <!-- 版权声明 -->
+    <link rel="stylesheet" href="/css/copyright.css">
+    
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+</head>
+<style>
+
+    header.intro-header {
+        background-image: url('//o7bkkhiex.bkt.clouddn.com/lion-blur-bg.jpg')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    LiuChenZe
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>Minecraft服务器搭建</h1>
+                    
+                    <span class="meta">
+                         作者 LiuChenZe
+                        <span>
+                          日期 2018-09-05
+                         </span>
+                         <span>字数 411</span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#服务器搭建"
+                           title="服务器搭建">服务器搭建</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            Minecraft服务器搭建
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h1 id="启动Minecraft服务器端程序-jar-版）"><a href="#启动Minecraft服务器端程序-jar-版）" class="headerlink" title="启动Minecraft服务器端程序 (.jar 版）"></a>启动Minecraft服务器端程序 (.jar 版）</h1><ol>
+<li><p>要在Windows上运行jar版本的Minecraft服务器端程序，先用「记事本」新建一个文本文件，然后粘帖以下内容进去：</p>
+<blockquote>
+<p>java -Xms512M -Xmx1024M -jar minecraft_server.jar</p>
+</blockquote>
+</li>
+<li><p>保存为 startserver.bat，放在与minecraft_server.jar相同的目录下。 .bat文件是批处理文件</p>
+</li>
+<li><p>双击 startserver.bat，会打开命令提示符，但是过一会就会自动关闭。</p>
+</li>
+<li><p>自动关闭后发现该文件夹下多了不少东西</p>
+</li>
+<li><p>编辑其中的eula.txt，将eula=false 修改为 eula=true, 再继续运行start.bat</p>
+</li>
+<li><p>当你发现命令行输出如下表示MC的服务器端已经启动了</p>
+<blockquote>
+<p>[17:47:12 INFO]: Done (18.780s)! For help, type “help” or “?” [17:47:12 INFO]: Registered command forge with permission node net.minecraftforge.server.command.ForgeCommand</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="server-properties配置"><a href="#server-properties配置" class="headerlink" title="server.properties配置"></a>server.properties配置</h1><figure class="highlight"><table><tr><td class="code"><pre><span class="line">#Minecraft server properties</span><br><span class="line"></span><br><span class="line"> #Tue Jun 14 19:04:34 CST 2016</span><br><span class="line"></span><br><span class="line"> generator-settings=</span><br><span class="line"></span><br><span class="line"> op-permission-level=4</span><br><span class="line"></span><br><span class="line"> allow-nether=true</span><br><span class="line"></span><br><span class="line"> level-name=world//当前世界，这个修改掉以后，相当于重新开了一个世界。</span><br><span class="line"></span><br><span class="line"> enable-query=false</span><br><span class="line"></span><br><span class="line"> allow-flight=false</span><br><span class="line"></span><br><span class="line"> announce-player-achievements=true</span><br><span class="line"></span><br><span class="line"> server-port=25565 //服务器端口</span><br><span class="line"></span><br><span class="line"> level-type=DEFAULT</span><br><span class="line"></span><br><span class="line"> enable-rcon=false</span><br><span class="line"></span><br><span class="line"> level-seed=</span><br><span class="line"></span><br><span class="line"> force-gamemode=false</span><br><span class="line"></span><br><span class="line"> server-ip=//服务器IP，默认不需要修改</span><br><span class="line"></span><br><span class="line"> max-build-height=256</span><br><span class="line"></span><br><span class="line"> spawn-npcs=true</span><br><span class="line"></span><br><span class="line"> white-list=false//是否启用白名单，默认不启用</span><br><span class="line"></span><br><span class="line"> spawn-animals=true</span><br><span class="line"></span><br><span class="line"> hardcore=false</span><br><span class="line"></span><br><span class="line"> snooper-enabled=true</span><br><span class="line"></span><br><span class="line"> online-mode=true//修改为online-mode=false，允许非认证（盗版）用户访问，一定要修改不然不能启动！！！</span><br><span class="line"></span><br><span class="line"> resource-pack=</span><br><span class="line"></span><br><span class="line"> pvp=true</span><br><span class="line"></span><br><span class="line"> difficulty=1</span><br><span class="line"></span><br><span class="line">enable-command-block=false</span><br><span class="line"></span><br><span class="line"> gamemode=0 //gamemode=1 创造，gamemode=0 生存，gamemode=2 极限</span><br><span class="line"></span><br><span class="line"> player-idle-timeout=0</span><br><span class="line"></span><br><span class="line"> max-players=20//最大同时在线玩家数量</span><br><span class="line"></span><br><span class="line"> spawn-monsters=true</span><br><span class="line"></span><br><span class="line"> generate-structures=true</span><br><span class="line"></span><br><span class="line"> view-distance=10</span><br><span class="line"> motd=A Minecraft Server//服务器简介</span><br></pre></td></tr></table></figure>
+                <hr>
+                <!-- 打赏 -->
+                
+                    
+                
+                <!-- 版权声明 -->
+                
+                    <div class="copyright_post">
+                        <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+                        
+                        <!-- JS库 sweetalert 可修改路径 -->
+                        <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+                        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                        <p><span>本文作者:</span><a href="/" title="访问 LiuChenZe 的个人博客">LiuChenZe</a></p>
+                        <p><span>本文链接:</span><a href="/2018/09/05/Minecraft服务器搭建/" title="Minecraft服务器搭建">http://LiuChenZe.github.io/2018/09/05/Minecraft服务器搭建/</a>
+                        <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://LiuChenZe.github.io/2018/09/05/Minecraft服务器搭建/"  aria-label="复制成功！"></i></span>
+                        </p>
+                        <p><span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+                    </div>
+                    <script> 
+                        var clipboard = new Clipboard('.fa-clipboard');
+                            $(".fa-clipboard").click(function(){
+                            clipboard.on('success', function(){
+                            swal({   
+                                title: "",   
+                                text: '本文链接复制成功',
+                                icon: "success", 
+                                showConfirmButton: true
+                                });
+                            });
+                        });  
+                    </script>
+                    
+                
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2018/08/28/泰拉瑞亚服务器搭建/" data-toggle="tooltip" data-placement="top"
+                           title="泰拉瑞亚服务器搭建">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#启动Minecraft服务器端程序-jar-版）"><span class="toc-text">启动Minecraft服务器端程序 (.jar 版）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#server-properties配置"><span class="toc-text">server.properties配置</span></a></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#服务器搭建"
+                           title="服务器搭建">服务器搭建</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/咸鱼先生">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/咸鱼到碗里来">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/LiuChenZe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; LiuChenZe 2018
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://LiuChenZe.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="">
+</body>
+
+</html>
