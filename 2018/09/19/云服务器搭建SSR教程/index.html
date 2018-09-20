@@ -156,7 +156,7 @@
                         <span>
                           日期 2018-09-19
                          </span>
-                         <span>字数 2,736</span>
+                         <span>字数 2,738</span>
                     </span>
                     <div class="tags text-center">
                         
@@ -288,7 +288,7 @@
 <p><code>wget -N --no-check-certificate https://raw.githubusercontent.com/91yun/serverspeeder/master/serverspeeder-all.sh &amp;&amp; bash serverspeeder-all.sh</code></p>
 </blockquote>
 <h1 id="一些建议"><a href="#一些建议" class="headerlink" title="一些建议"></a>一些建议</h1><p>这仅仅是建议，并不能保证你的VPS安然无恙,除此之外的，由于GFW诡异的算法和判定方式，虽然加密协议混淆之类的也许没有什么太大的作用，我仍然推荐你进行设置：</p>
-<h2 id="推荐使用的加密-协议-混淆"><a href="#推荐使用的加密-协议-混淆" class="headerlink" title="推荐使用的加密/协议/混淆"></a>推荐使用的加密/协议/混淆</h2><h3 id="SS"><a href="#SS" class="headerlink" title="SS"></a>SS</h3><ol>
+<h2 id="推荐使用的加密-协议-混淆"><a href="#推荐使用的加密-协议-混淆" class="headerlink" title="推荐使用的加密/协议/混淆"></a>推荐使用的加密/协议/混淆</h2><h3 id="1-SS"><a href="#1-SS" class="headerlink" title="1. SS"></a>1. SS</h3><ol>
 <li><p>加密推荐使用 AEAD 加密，包括以下几个</p>
 <ul>
 <li>aes-128-gcm</li>
@@ -304,7 +304,7 @@
 <li><p>混淆推荐使用 <code>plain</code> ,即不使用混淆插件，或者使用 <code>http_simple</code></p>
 </li>
 </ol>
-<h3 id="SSR"><a href="#SSR" class="headerlink" title="SSR"></a>SSR</h3><ol>
+<h3 id="2-SSR"><a href="#2-SSR" class="headerlink" title="2. SSR"></a>2. SSR</h3><ol>
 <li>加密推荐使用 <code>none</code></li>
 <li>协议推荐使用 <code>chain_a</code></li>
 <li><p>混淆推荐使用 <code>plain</code> 或者 <code>http_simple</code></p>
@@ -313,7 +313,7 @@
 </blockquote>
 </li>
 </ol>
-<h3 id="混淆为什么不选-tls"><a href="#混淆为什么不选-tls" class="headerlink" title="混淆为什么不选 tls"></a>混淆为什么不选 <code>tls</code></h3><p>虽然有人觉得这很迷信但是我还是要讲</p>
+<h2 id="混淆为什么不选-tls"><a href="#混淆为什么不选-tls" class="headerlink" title="混淆为什么不选 tls"></a>混淆为什么不选 <code>tls</code></h2><p>虽然有人觉得这很迷信但是我还是要讲</p>
 <p>前段时间我与其他人讨论的时候，就发现了一个共同点，那就是被Q的人大多数都使用了 <code>tls1.2_ticket_auth</code> 混淆；而一些混淆 <code>plain</code> 的人，即使还在使用老旧甚至过时的协议，却安然无恙</p>
 <p>很有理由猜测 GFW 已经掌握了 tls 混淆的特征</p>
 <p>让我更确信了我的猜测的是，后来询问我被Q相关问题的人，大多数都用的是搬瓦工后台自带酸酸乳，因为我从没有用过搬瓦工，我询问了他们后才知道，搬瓦工的酸酸乳是强制 <code>tls1.2_ticket_auth</code> 混淆，嗯，真不愧是 GFW 最佳合作伙伴（而且搬瓦工自带酸酸居然没有 AEAD 加密）</p>
@@ -321,7 +321,7 @@
 <p><strong><em>SSR的tls凭据复用已经成为安全问题 不要用了</em></strong></p>
 <p>而且，就 tls 混淆原本的用途来说，tls 混淆只是为了突破部分地区的网络环境才有的 QoS 限制，一般情况下根本不需要使用<br>破娃酱也在文档里说的很明白，一切因使用混淆而产生的看似是网络加速了的效果都是因为绕过了限制，混淆实际上会减慢你的网络速度</p>
 <p>并且，如果你并不明白http(s)协议的具体细节，没有这方面的计算机网络知识，那么也不要轻易使用 <code>http_simple</code> 之类的混淆；如果没有必要，也不要使用80和443端口，这些在 GFW 眼里很可能会成为一种明显的特征</p>
-<h3 id="加密这块到底是怎么回事"><a href="#加密这块到底是怎么回事" class="headerlink" title="加密这块到底是怎么回事"></a>加密这块到底是怎么回事</h3><p>简单的来说，我们若干年前使用的非 AEAD 加密，都存在被主动探测到的风险（这一块如果感兴趣想了解，可以自行查找 AEAD 加密的相关科普博文）</p>
+<h2 id="加密这块到底是怎么回事"><a href="#加密这块到底是怎么回事" class="headerlink" title="加密这块到底是怎么回事"></a>加密这块到底是怎么回事</h2><p>简单的来说，我们若干年前使用的非 AEAD 加密，都存在被主动探测到的风险（这一块如果感兴趣想了解，可以自行查找 AEAD 加密的相关科普博文）</p>
 <p>因此，如果是SS，强烈推荐使用之前提到的那5种 AEAD 加密，为了防止今后（可能的）来自 GFW 的主动探测（虽然实际上基本不会有这种可能）</p>
 <p>而SSR，虽然目前并没有使用到 AEAD 加密，但是破娃酱在设计协议的时候已经考虑到了主动探测问题并且针对这块进行了设计，因此目前来说还是相对安全的，前提是你使用的是 <code>chain_a</code> 或 <code>auth_aes128_md5</code> 或 <code>auth_aes128_sha1</code> 协议</p>
 <p>对于SSR, <code>chain_a</code> 是目前最佳的协议; <code>chain_b</code> 虽然说更难以被识别，但是仍是一个测试版协议，并且实际使用发现丢包现象莫名十分严重，并不能用；至于SSR那些 <code>chain_c/d/e/f</code>, 可以看看<a href="https://github.com/shadowsocksrr/shadowsocks-rss/blob/master/ssr.md" target="_blank" rel="noopener">这里</a></p>
@@ -388,7 +388,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#VPS服务商推荐"><span class="toc-text">VPS服务商推荐</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSR搭建"><span class="toc-text">SSR搭建</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSR连接方法"><span class="toc-text">SSR连接方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSR常用命令与配置"><span class="toc-text">SSR常用命令与配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用命令"><span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改密码-配置多端口"><span class="toc-text">修改密码,配置多端口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSR提速"><span class="toc-text">SSR提速</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一些建议"><span class="toc-text">一些建议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#推荐使用的加密-协议-混淆"><span class="toc-text">推荐使用的加密/协议/混淆</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SS"><span class="toc-text">SS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSR"><span class="toc-text">SSR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#混淆为什么不选-tls"><span class="toc-text">混淆为什么不选 tls</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#加密这块到底是怎么回事"><span class="toc-text">加密这块到底是怎么回事</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#VPS服务商推荐"><span class="toc-text">VPS服务商推荐</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSR搭建"><span class="toc-text">SSR搭建</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSR连接方法"><span class="toc-text">SSR连接方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSR常用命令与配置"><span class="toc-text">SSR常用命令与配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用命令"><span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改密码-配置多端口"><span class="toc-text">修改密码,配置多端口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSR提速"><span class="toc-text">SSR提速</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一些建议"><span class="toc-text">一些建议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#推荐使用的加密-协议-混淆"><span class="toc-text">推荐使用的加密/协议/混淆</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-SS"><span class="toc-text">1. SS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-SSR"><span class="toc-text">2. SSR</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#混淆为什么不选-tls"><span class="toc-text">混淆为什么不选 tls</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#加密这块到底是怎么回事"><span class="toc-text">加密这块到底是怎么回事</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
