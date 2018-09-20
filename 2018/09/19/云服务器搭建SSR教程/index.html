@@ -156,7 +156,7 @@
                         <span>
                           日期 2018-09-19
                          </span>
-                         <span>字数 1,366</span>
+                         <span>字数 2,736</span>
                     </span>
                     <div class="tags text-center">
                         
@@ -229,11 +229,11 @@
 </ol>
 <p><img src="https://github.com/LiuChenZe/LiuChenZe.github.io/blob/master/2018/09/19/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BASSR%E6%95%99%E7%A8%8B/TIM%E5%9B%BE%E7%89%8720180919111711.png?raw=true" alt="ShadowsocksR" title="ShadowsocksR"></p>
 <hr>
-<h1 id="SSR连接和使用"><a href="#SSR连接和使用" class="headerlink" title="SSR连接和使用"></a>SSR连接和使用</h1><p>推荐使用 <a href="https://www.sockscap64.com/zh-hans/sstap/" target="_blank" rel="noopener">Windows - SSTap</a> 来连接SSR</p>
+<h1 id="SSR连接方法"><a href="#SSR连接方法" class="headerlink" title="SSR连接方法"></a>SSR连接方法</h1><p>推荐使用 <a href="https://www.sockscap64.com/zh-hans/sstap/" target="_blank" rel="noopener">Windows - SSTap</a> 来连接SSR</p>
 <blockquote>
 <p>SSTap 全称 SOCKSTap, 是一款利用虚拟网卡技术在网络层实现的代理工具。<br>SSTap 能在网络层拦截所有连接并转发给 HTTP, SOCKS4/5, SHADOWSOCKS(R) 代理。<br>而无需对被代理的应用程序做任何修改或设置。<br>它能同时转发 TCP, UDP 数据包。<br>它非常适合于游戏玩家使用。</p>
 </blockquote>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><ol>
+<ol>
 <li>添加SS/SSR,输入搭建成功页面显示内容, <strong>没有显示的内容不需要填写</strong></li>
 </ol>
 <p><img src="https://github.com/LiuChenZe/LiuChenZe.github.io/blob/master/2018/09/19/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BASSR%E6%95%99%E7%A8%8B/TIM%E5%9B%BE%E7%89%8720180919114535.png?raw=true" alt="ShadowsocksR" title="ShadowsocksR"></p>
@@ -244,6 +244,90 @@
 <ol start="3">
 <li>好了, 到这里小伙伴们就可以畅游世界网络了!</li>
 </ol>
+<h1 id="SSR常用命令与配置"><a href="#SSR常用命令与配置" class="headerlink" title="SSR常用命令与配置"></a>SSR常用命令与配置</h1><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ul>
+<li>启动 <code>/etc/init.d/shadowsocks start</code></li>
+<li>停止 <code>/etc/init.d/shadowsocks stop</code></li>
+<li>重启 <code>/etc/init.d/shadowsocks restart</code></li>
+<li>状态 <code>/etc/init.d/shadowsocks status</code></li>
+</ul>
+<h2 id="修改密码-配置多端口"><a href="#修改密码-配置多端口" class="headerlink" title="修改密码,配置多端口"></a>修改密码,配置多端口</h2><ol>
+<li>输入 <code>vi /etc/shadowsocks.json</code></li>
+<li>按 <code>i</code> 进入编辑模式,内容如下</li>
+</ol>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"server"</span>:<span class="string">"0.0.0.0"</span>,</span><br><span class="line">    <span class="attr">"server_ipv6"</span>:<span class="string">"::"</span>,</span><br><span class="line">    <span class="attr">"local_address"</span>:<span class="string">"127.0.0.1"</span>,</span><br><span class="line">    <span class="attr">"local_port"</span>:<span class="number">1081</span>,</span><br><span class="line">    <span class="attr">"port_password"</span>:&#123;</span><br><span class="line">        <span class="attr">"端口1"</span>:<span class="string">"密码1"</span>,</span><br><span class="line">        <span class="attr">"端口2"</span>:<span class="string">"密码2"</span>,</span><br><span class="line">        <span class="attr">"端口3"</span>:<span class="string">"密码3"</span>,</span><br><span class="line">        <span class="attr">"端口4"</span>:<span class="string">"密码4"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"timeout"</span>:<span class="number">120</span>,</span><br><span class="line">    <span class="attr">"udp_timeout"</span>:<span class="number">60</span>,</span><br><span class="line">    <span class="attr">"method"</span>:<span class="string">"chacha20"</span>,</span><br><span class="line">    <span class="attr">"protocol"</span>:<span class="string">"auth_sha1_compatible"</span>,</span><br><span class="line">    <span class="attr">"protocol_param"</span>:<span class="string">""</span>,</span><br><span class="line">    <span class="attr">"obfs"</span>:<span class="string">"http_simple_compatible"</span>,</span><br><span class="line">    <span class="attr">"obfs_param"</span>:<span class="string">""</span>,</span><br><span class="line">    <span class="attr">"dns_ipv6"</span>:<span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"connect_verbose_info"</span>:<span class="number">0</span>,</span><br><span class="line">    <span class="attr">"redirect"</span>:<span class="string">""</span>,</span><br><span class="line">    <span class="attr">"fast_open"</span>:<span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"workers"</span>:<span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>按esc返回,输入 <code>:wq</code> 然后输入回车,保存</li>
+<li>输入 <code>/etc/init.d/shadowsocks restart</code> 重启SSR</li>
+</ol>
+<blockquote>
+<p>如果不能联网,则依次输入以下命令来关闭防火墙</p>
+<ol>
+<li><code>service iptables restart</code></li>
+<li><code>service iptables stop</code></li>
+<li><code>chkconfig iptables off</code></li>
+</ol>
+</blockquote>
+<h2 id="SSR提速"><a href="#SSR提速" class="headerlink" title="SSR提速"></a>SSR提速</h2><blockquote>
+<p>锐速(仅支持KVM,Xen,vmare架构,如果网速较慢,可使用锐速,看YouTube 1080p无压力)</p>
+</blockquote>
+<ol>
+<li><p>由于锐速对内核要求严格，所以要先更换内核, <strong>Vultr需先执行此脚本</strong>, 脚本执行过程中，请勿进行任何操作。待服务器重启后，重新连接安装锐速即可。</p>
+<blockquote>
+<p><code>wget -N --no-check-certificate https://freed.ga/kernel/ruisu.sh &amp;&amp; bash ruisu.sh</code></p>
+</blockquote>
+</li>
+<li><p>锐速安装脚本：</p>
+<blockquote>
+<p><code>wget -N --no-check-certificate https://github.com/91yun/serverspeeder/raw/master/serverspeeder.sh &amp;&amp; bash serverspeeder.sh</code></p>
+</blockquote>
+</li>
+<li><p><strong>备用脚本</strong></p>
+</li>
+</ol>
+<blockquote>
+<p><code>wget -N --no-check-certificate https://raw.githubusercontent.com/91yun/serverspeeder/master/serverspeeder-all.sh &amp;&amp; bash serverspeeder-all.sh</code></p>
+</blockquote>
+<h1 id="一些建议"><a href="#一些建议" class="headerlink" title="一些建议"></a>一些建议</h1><p>这仅仅是建议，并不能保证你的VPS安然无恙,除此之外的，由于GFW诡异的算法和判定方式，虽然加密协议混淆之类的也许没有什么太大的作用，我仍然推荐你进行设置：</p>
+<h2 id="推荐使用的加密-协议-混淆"><a href="#推荐使用的加密-协议-混淆" class="headerlink" title="推荐使用的加密/协议/混淆"></a>推荐使用的加密/协议/混淆</h2><h3 id="SS"><a href="#SS" class="headerlink" title="SS"></a>SS</h3><ol>
+<li><p>加密推荐使用 AEAD 加密，包括以下几个</p>
+<ul>
+<li>aes-128-gcm</li>
+<li>aes-192-gcm</li>
+<li>aes-256-gcm</li>
+<li>chacha20-ietf-poly1305</li>
+<li>xchacha20-ietf-poly1305</li>
+</ul>
+<blockquote>
+<p>对于移动设备来说,ARM v8以后的CPU使用 <code>aes-gcm</code> 的效率要高于 <code>chacha20</code> ，因此更推荐使用 <code>aes-256-gcm</code></p>
+</blockquote>
+</li>
+<li><p>混淆推荐使用 <code>plain</code> ,即不使用混淆插件，或者使用 <code>http_simple</code></p>
+</li>
+</ol>
+<h3 id="SSR"><a href="#SSR" class="headerlink" title="SSR"></a>SSR</h3><ol>
+<li>加密推荐使用 <code>none</code></li>
+<li>协议推荐使用 <code>chain_a</code></li>
+<li><p>混淆推荐使用 <code>plain</code> 或者 <code>http_simple</code></p>
+<blockquote>
+<p>能用 <code>plain</code> 没问题就用 <code>plain</code> ,当在 <code>plain</code> 情况下你察觉到网络有异样，且你了解 <code>http_simple</code> 混淆参数的用途，再酌情使用<code>http_simple</code></p>
+</blockquote>
+</li>
+</ol>
+<h3 id="混淆为什么不选-tls"><a href="#混淆为什么不选-tls" class="headerlink" title="混淆为什么不选 tls"></a>混淆为什么不选 <code>tls</code></h3><p>虽然有人觉得这很迷信但是我还是要讲</p>
+<p>前段时间我与其他人讨论的时候，就发现了一个共同点，那就是被Q的人大多数都使用了 <code>tls1.2_ticket_auth</code> 混淆；而一些混淆 <code>plain</code> 的人，即使还在使用老旧甚至过时的协议，却安然无恙</p>
+<p>很有理由猜测 GFW 已经掌握了 tls 混淆的特征</p>
+<p>让我更确信了我的猜测的是，后来询问我被Q相关问题的人，大多数都用的是搬瓦工后台自带酸酸乳，因为我从没有用过搬瓦工，我询问了他们后才知道，搬瓦工的酸酸乳是强制 <code>tls1.2_ticket_auth</code> 混淆，嗯，真不愧是 GFW 最佳合作伙伴（而且搬瓦工自带酸酸居然没有 AEAD 加密）</p>
+<p>后来，推特上也有人指出</p>
+<p><strong><em>SSR的tls凭据复用已经成为安全问题 不要用了</em></strong></p>
+<p>而且，就 tls 混淆原本的用途来说，tls 混淆只是为了突破部分地区的网络环境才有的 QoS 限制，一般情况下根本不需要使用<br>破娃酱也在文档里说的很明白，一切因使用混淆而产生的看似是网络加速了的效果都是因为绕过了限制，混淆实际上会减慢你的网络速度</p>
+<p>并且，如果你并不明白http(s)协议的具体细节，没有这方面的计算机网络知识，那么也不要轻易使用 <code>http_simple</code> 之类的混淆；如果没有必要，也不要使用80和443端口，这些在 GFW 眼里很可能会成为一种明显的特征</p>
+<h3 id="加密这块到底是怎么回事"><a href="#加密这块到底是怎么回事" class="headerlink" title="加密这块到底是怎么回事"></a>加密这块到底是怎么回事</h3><p>简单的来说，我们若干年前使用的非 AEAD 加密，都存在被主动探测到的风险（这一块如果感兴趣想了解，可以自行查找 AEAD 加密的相关科普博文）</p>
+<p>因此，如果是SS，强烈推荐使用之前提到的那5种 AEAD 加密，为了防止今后（可能的）来自 GFW 的主动探测（虽然实际上基本不会有这种可能）</p>
+<p>而SSR，虽然目前并没有使用到 AEAD 加密，但是破娃酱在设计协议的时候已经考虑到了主动探测问题并且针对这块进行了设计，因此目前来说还是相对安全的，前提是你使用的是 <code>chain_a</code> 或 <code>auth_aes128_md5</code> 或 <code>auth_aes128_sha1</code> 协议</p>
+<p>对于SSR, <code>chain_a</code> 是目前最佳的协议; <code>chain_b</code> 虽然说更难以被识别，但是仍是一个测试版协议，并且实际使用发现丢包现象莫名十分严重，并不能用；至于SSR那些 <code>chain_c/d/e/f</code>, 可以看看<a href="https://github.com/shadowsocksrr/shadowsocks-rss/blob/master/ssr.md" target="_blank" rel="noopener">这里</a></p>
+<blockquote>
+<p>之前提到的推荐配置中，酸酸乳的加密为 <code>none</code> 的原因是, <code>auth_chain</code> 系列协议已经自带了 <code>RC4</code> 加密，针对 UDP 部分也有加密及长度混淆，因此一般情况下不需要再进行额外的加密；如果你觉得 <code>RC4</code> 加密有安全隐患，再套一层其他加密也可</p>
+</blockquote>
 
                 <hr>
                 <!-- 打赏 -->
@@ -304,7 +388,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#VPS服务商推荐"><span class="toc-text">VPS服务商推荐</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSR搭建"><span class="toc-text">SSR搭建</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSR连接和使用"><span class="toc-text">SSR连接和使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用"><span class="toc-text">使用</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#VPS服务商推荐"><span class="toc-text">VPS服务商推荐</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSR搭建"><span class="toc-text">SSR搭建</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSR连接方法"><span class="toc-text">SSR连接方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSR常用命令与配置"><span class="toc-text">SSR常用命令与配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用命令"><span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改密码-配置多端口"><span class="toc-text">修改密码,配置多端口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSR提速"><span class="toc-text">SSR提速</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一些建议"><span class="toc-text">一些建议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#推荐使用的加密-协议-混淆"><span class="toc-text">推荐使用的加密/协议/混淆</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SS"><span class="toc-text">SS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSR"><span class="toc-text">SSR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#混淆为什么不选-tls"><span class="toc-text">混淆为什么不选 tls</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#加密这块到底是怎么回事"><span class="toc-text">加密这块到底是怎么回事</span></a></li></ol></li></ol></li></ol>
                 </div>
             </div>
         </div>
