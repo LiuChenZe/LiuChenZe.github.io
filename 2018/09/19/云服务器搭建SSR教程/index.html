@@ -156,7 +156,7 @@
                         <span>
                           日期 2018-09-19
                          </span>
-                         <span>字数 2,838</span>
+                         <span>字数 2,880</span>
                     </span>
                     <div class="tags text-center">
                         
@@ -281,6 +281,11 @@
 <li><code>chkconfig iptables off</code></li>
 </ol>
 </blockquote>
+<ol start="5">
+<li>开启相应端口即可,开启端口命令如下</li>
+</ol>
+<p><code>iptables -I INPUT -p tcp --dport 端口 -j ACCEPT</code></p>
+<p>例如开80端口 <code>iptables -I INPUT -p tcp --dport 80 -j ACCEPT</code></p>
 <h2 id="github-连接超时问题"><a href="#github-连接超时问题" class="headerlink" title="github 连接超时问题"></a>github 连接超时问题</h2><p>修改 <code>hosts/etc/hosts</code> 文件。在文件最后增加一行 <code>219.76.4.4  github-cloud.s3.amazonaws.com</code></p>
 <h2 id="SSR提速"><a href="#SSR提速" class="headerlink" title="SSR提速"></a>SSR提速</h2><blockquote>
 <p>锐速(仅支持KVM,Xen,vmare架构,如果网速较慢,可使用锐速,看YouTube 1080p无压力)</p>
