@@ -156,7 +156,7 @@
                         <span>
                           日期 2018-09-19
                          </span>
-                         <span>字数 2,766</span>
+                         <span>字数 2,838</span>
                     </span>
                     <div class="tags text-center">
                         
@@ -224,12 +224,18 @@
 </li>
 <li><p>安装完后会直接提示新增用户,输入密码,默认 <code>www.qcgzxw.cn</code></p>
 </li>
-<li><p>输入端口</p>
-</li>
-<li><p>按任意键开始安装</p>
-</li>
-<li><p>成功截图</p>
-</li>
+</ol>
+<p><img src="https://github.com/LiuChenZe/LiuChenZe.github.io/blob/master/2018/09/19/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BASSR%E6%95%99%E7%A8%8B/qcgzxw20170730141310.png?raw=true" alt="ShadowsocksR" title="ShadowsocksR"></p>
+<ol start="4">
+<li>输入端口</li>
+</ol>
+<p><img src="https://github.com/LiuChenZe/LiuChenZe.github.io/blob/master/2018/09/19/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BASSR%E6%95%99%E7%A8%8B/qcgzxw20170730141324.png?raw=true" alt="ShadowsocksR" title="ShadowsocksR"></p>
+<ol start="5">
+<li>按任意键开始安装</li>
+</ol>
+<p><img src="https://github.com/LiuChenZe/LiuChenZe.github.io/blob/master/2018/09/19/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BASSR%E6%95%99%E7%A8%8B/qcgzxw20170730141346.png?raw=true" alt="ShadowsocksR" title="ShadowsocksR"></p>
+<ol start="6">
+<li>成功截图</li>
 </ol>
 <p><img src="https://github.com/LiuChenZe/LiuChenZe.github.io/blob/master/2018/09/19/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BASSR%E6%95%99%E7%A8%8B/TIM%E5%9B%BE%E7%89%8720180919111711.png?raw=true" alt="ShadowsocksR" title="ShadowsocksR"></p>
 <hr>
@@ -253,12 +259,16 @@
 <li>停止 <code>/etc/init.d/shadowsocks stop</code></li>
 <li>重启 <code>/etc/init.d/shadowsocks restart</code></li>
 <li>状态 <code>/etc/init.d/shadowsocks status</code></li>
+<li>更新 <code>/etc/init.d/shadowsocks update</code></li>
+<li>卸载 <code>/etc/init.d/shadowsocks uninstall</code></li>
+<li>添加用户 <code>/etc/init.d/shadowsocks adduser</code></li>
+<li>删除用户 <code>/etc/init.d/shadowsocks deluser</code></li>
 </ul>
 <h2 id="修改密码-配置多端口"><a href="#修改密码-配置多端口" class="headerlink" title="修改密码,配置多端口"></a>修改密码,配置多端口</h2><ol>
 <li>输入 <code>vi /etc/shadowsocks.json</code></li>
 <li>按 <code>i</code> 进入编辑模式,内容如下</li>
 </ol>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"server"</span>:<span class="string">"0.0.0.0"</span>,</span><br><span class="line">    <span class="attr">"server_ipv6"</span>:<span class="string">"::"</span>,</span><br><span class="line">    <span class="attr">"local_address"</span>:<span class="string">"127.0.0.1"</span>,</span><br><span class="line">    <span class="attr">"local_port"</span>:<span class="number">1081</span>,</span><br><span class="line">    <span class="attr">"port_password"</span>:&#123;</span><br><span class="line">        <span class="attr">"端口1"</span>:<span class="string">"密码1"</span>,</span><br><span class="line">        <span class="attr">"端口2"</span>:<span class="string">"密码2"</span>,</span><br><span class="line">        <span class="attr">"端口3"</span>:<span class="string">"密码3"</span>,</span><br><span class="line">        <span class="attr">"端口4"</span>:<span class="string">"密码4"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"timeout"</span>:<span class="number">120</span>,</span><br><span class="line">    <span class="attr">"udp_timeout"</span>:<span class="number">60</span>,</span><br><span class="line">    <span class="attr">"method"</span>:<span class="string">"chacha20"</span>,</span><br><span class="line">    <span class="attr">"protocol"</span>:<span class="string">"auth_sha1_compatible"</span>,</span><br><span class="line">    <span class="attr">"protocol_param"</span>:<span class="string">""</span>,</span><br><span class="line">    <span class="attr">"obfs"</span>:<span class="string">"http_simple_compatible"</span>,</span><br><span class="line">    <span class="attr">"obfs_param"</span>:<span class="string">""</span>,</span><br><span class="line">    <span class="attr">"dns_ipv6"</span>:<span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"connect_verbose_info"</span>:<span class="number">0</span>,</span><br><span class="line">    <span class="attr">"redirect"</span>:<span class="string">""</span>,</span><br><span class="line">    <span class="attr">"fast_open"</span>:<span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"workers"</span>:<span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"server"</span>:<span class="string">"0.0.0.0"</span>,</span><br><span class="line">    <span class="attr">"server_ipv6"</span>:<span class="string">"::"</span>,</span><br><span class="line">    <span class="attr">"local_address"</span>:<span class="string">"127.0.0.1"</span>,</span><br><span class="line">    <span class="attr">"local_port"</span>:<span class="number">1081</span>,</span><br><span class="line">    <span class="attr">"port_password"</span>:&#123;</span><br><span class="line">        <span class="attr">"端口1"</span>:<span class="string">"密码1"</span>,</span><br><span class="line">        <span class="attr">"端口2"</span>:<span class="string">"密码2"</span>,</span><br><span class="line">        <span class="attr">"端口3"</span>:<span class="string">"密码3"</span>,</span><br><span class="line">        <span class="attr">"端口4"</span>:<span class="string">"密码4"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"timeout"</span>:<span class="number">120</span>,</span><br><span class="line">    <span class="attr">"udp_timeout"</span>:<span class="number">60</span>,</span><br><span class="line">    "method":"chacha20", // 加密方法</span><br><span class="line">    "protocol":"auth_sha1_compatible", // 协议</span><br><span class="line">    "protocol_param":"",</span><br><span class="line">    "obfs":"http_simple_compatible", // 混淆</span><br><span class="line">    "obfs_param":"",</span><br><span class="line">    "dns_ipv6":false,</span><br><span class="line">    "connect_verbose_info":0,</span><br><span class="line">    "redirect":"",</span><br><span class="line">    "fast_open":false,</span><br><span class="line">    "workers":1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="3">
 <li>按esc返回,输入 <code>:wq</code> 然后输入回车,保存</li>
 <li>输入 <code>/etc/init.d/shadowsocks restart</code> 重启SSR</li>
@@ -271,6 +281,7 @@
 <li><code>chkconfig iptables off</code></li>
 </ol>
 </blockquote>
+<h2 id="github-连接超时问题"><a href="#github-连接超时问题" class="headerlink" title="github 连接超时问题"></a>github 连接超时问题</h2><p>修改 <code>hosts/etc/hosts</code> 文件。在文件最后增加一行 <code>219.76.4.4  github-cloud.s3.amazonaws.com</code></p>
 <h2 id="SSR提速"><a href="#SSR提速" class="headerlink" title="SSR提速"></a>SSR提速</h2><blockquote>
 <p>锐速(仅支持KVM,Xen,vmare架构,如果网速较慢,可使用锐速,看YouTube 1080p无压力)</p>
 </blockquote>
@@ -392,7 +403,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#VPS服务商推荐"><span class="toc-text">VPS服务商推荐</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSR搭建"><span class="toc-text">SSR搭建</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSR连接方法"><span class="toc-text">SSR连接方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSR常用命令与配置"><span class="toc-text">SSR常用命令与配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用命令"><span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改密码-配置多端口"><span class="toc-text">修改密码,配置多端口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSR提速"><span class="toc-text">SSR提速</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一些建议"><span class="toc-text">一些建议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#推荐使用的加密-协议-混淆"><span class="toc-text">推荐使用的加密/协议/混淆</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-SS"><span class="toc-text">1. SS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-SSR"><span class="toc-text">2. SSR</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#混淆为什么不选-tls"><span class="toc-text">混淆为什么不选 tls</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#加密这块到底是怎么回事"><span class="toc-text">加密这块到底是怎么回事</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#VPS服务商推荐"><span class="toc-text">VPS服务商推荐</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSR搭建"><span class="toc-text">SSR搭建</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSR连接方法"><span class="toc-text">SSR连接方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSR常用命令与配置"><span class="toc-text">SSR常用命令与配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用命令"><span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改密码-配置多端口"><span class="toc-text">修改密码,配置多端口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#github-连接超时问题"><span class="toc-text">github 连接超时问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSR提速"><span class="toc-text">SSR提速</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一些建议"><span class="toc-text">一些建议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#推荐使用的加密-协议-混淆"><span class="toc-text">推荐使用的加密/协议/混淆</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-SS"><span class="toc-text">1. SS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-SSR"><span class="toc-text">2. SSR</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#混淆为什么不选-tls"><span class="toc-text">混淆为什么不选 tls</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#加密这块到底是怎么回事"><span class="toc-text">加密这块到底是怎么回事</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
