@@ -156,7 +156,7 @@
                         <span>
                           日期 2018-09-19
                          </span>
-                         <span>字数 2,880</span>
+                         <span>字数 2,832</span>
                     </span>
                     <div class="tags text-center">
                         
@@ -183,11 +183,11 @@
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
                 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
 <p>本篇说明仅供交流与学习使用，请勿作出任何违反国家法律的行为。</p>
-<p>本教程包含 Windows、Android、iOS、MacOS 端的酸酸乳客户端的功能介绍和使用方法的详细介绍以及常见问题解决</p>
+<p>本教程包含SSR客户端的功能介绍和使用方法的详细介绍以及常见问题解决</p>
 </blockquote>
 <hr>
 <h1 id="VPS服务商推荐"><a href="#VPS服务商推荐" class="headerlink" title="VPS服务商推荐"></a>VPS服务商推荐</h1><blockquote>
-<p>为了帮助新入主机坑的朋友们少走点弯路，这里写一些自己买过的觉得挺适合初入坑者者搭建酸酸的主机商，主要是从价格和线路质量上考虑</p>
+<p>这里写一些自己买过的觉得挺适合初入坑者搭建SSR的主机商，主要是从价格和线路质量上考虑</p>
 <p>如果你希望即使被墙也很容易（很低成本）的去更换IP，那么我推荐<br>AWS Lightsail &gt; Vultr &gt; CloudCone</p>
 </blockquote>
 <ul>
@@ -336,17 +336,17 @@
 <h2 id="混淆为什么不选-tls"><a href="#混淆为什么不选-tls" class="headerlink" title="混淆为什么不选 tls"></a>混淆为什么不选 <code>tls</code></h2><p>虽然有人觉得这很迷信但是我还是要讲</p>
 <p>前段时间我与其他人讨论的时候，就发现了一个共同点，那就是被Q的人大多数都使用了 <code>tls1.2_ticket_auth</code> 混淆；而一些混淆 <code>plain</code> 的人，即使还在使用老旧甚至过时的协议，却安然无恙</p>
 <p>很有理由猜测 GFW 已经掌握了 tls 混淆的特征</p>
-<p>让我更确信了我的猜测的是，后来询问我被Q相关问题的人，大多数都用的是搬瓦工后台自带酸酸乳，因为我从没有用过搬瓦工，我询问了他们后才知道，搬瓦工的酸酸乳是强制 <code>tls1.2_ticket_auth</code> 混淆，嗯，真不愧是 GFW 最佳合作伙伴（而且搬瓦工自带酸酸居然没有 AEAD 加密）</p>
+<p>让我更确信了我的猜测的是，后来询问我被Q相关问题的人，大多数都用的是搬瓦工后台自带SSR，因为我从没有用过搬瓦工，我询问了他们后才知道，搬瓦工的SSR是强制 <code>tls1.2_ticket_auth</code> 混淆，嗯，真不愧是 GFW 最佳合作伙伴（而且搬瓦工自带SSR居然没有 AEAD 加密）</p>
 <p>后来，推特上也有人指出</p>
 <p><strong><em>SSR的tls凭据复用已经成为安全问题 不要用了</em></strong></p>
-<p>而且，就 tls 混淆原本的用途来说，tls 混淆只是为了突破部分地区的网络环境才有的 QoS 限制，一般情况下根本不需要使用<br>破娃酱也在文档里说的很明白，一切因使用混淆而产生的看似是网络加速了的效果都是因为绕过了限制，混淆实际上会减慢你的网络速度</p>
+<p>而且，就 tls 混淆原本的用途来说，tls 混淆只是为了突破部分地区的网络环境才有的 QoS 限制，一般情况下根本不需要使用, 一切因使用混淆而产生的看似是网络加速了的效果都是因为绕过了限制，混淆实际上会减慢你的网络速度</p>
 <p>并且，如果你并不明白http(s)协议的具体细节，没有这方面的计算机网络知识，那么也不要轻易使用 <code>http_simple</code> 之类的混淆；如果没有必要，也不要使用80和443端口，这些在 GFW 眼里很可能会成为一种明显的特征</p>
 <h2 id="加密这块到底是怎么回事"><a href="#加密这块到底是怎么回事" class="headerlink" title="加密这块到底是怎么回事"></a>加密这块到底是怎么回事</h2><p>简单的来说，我们若干年前使用的非 AEAD 加密，都存在被主动探测到的风险（这一块如果感兴趣想了解，可以自行查找 AEAD 加密的相关科普博文）</p>
 <p>因此，如果是SS，强烈推荐使用之前提到的那5种 AEAD 加密，为了防止今后（可能的）来自 GFW 的主动探测（虽然实际上基本不会有这种可能）</p>
 <p>而SSR，虽然目前并没有使用到 AEAD 加密，但是破娃酱在设计协议的时候已经考虑到了主动探测问题并且针对这块进行了设计，因此目前来说还是相对安全的，前提是你使用的是 <code>chain_a</code> 或 <code>auth_aes128_md5</code> 或 <code>auth_aes128_sha1</code> 协议</p>
 <p>对于SSR, <code>chain_a</code> 是目前最佳的协议; <code>chain_b</code> 虽然说更难以被识别，但是仍是一个测试版协议，并且实际使用发现丢包现象莫名十分严重，并不能用；至于SSR那些 <code>chain_c/d/e/f</code>, 可以看看<a href="https://github.com/shadowsocksrr/shadowsocks-rss/blob/master/ssr.md" target="_blank" rel="noopener">这里</a></p>
 <blockquote>
-<p>之前提到的推荐配置中，酸酸乳的加密为 <code>none</code> 的原因是, <code>auth_chain</code> 系列协议已经自带了 <code>RC4</code> 加密，针对 UDP 部分也有加密及长度混淆，因此一般情况下不需要再进行额外的加密；如果你觉得 <code>RC4</code> 加密有安全隐患，再套一层其他加密也可</p>
+<p>之前提到的推荐配置中，SSR的加密为 <code>none</code> 的原因是, <code>auth_chain</code> 系列协议已经自带了 <code>RC4</code> 加密，针对 UDP 部分也有加密及长度混淆，因此一般情况下不需要再进行额外的加密；如果你觉得 <code>RC4</code> 加密有安全隐患，再套一层其他加密也可</p>
 </blockquote>
 
                 <hr>
