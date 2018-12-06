@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        安装配置vue环境Windows/MacOS｜LiuChenZe的Blog
+        制作jar包,并添加到maven仓库｜LiuChenZe的Blog
         
     </title>
 
-    <link rel="canonical" href="http://LiuChenZe.github.io/2018/11/28/安装配置vue环境Windows-MacOS/">
+    <link rel="canonical" href="http://LiuChenZe.github.io/2018/12/06/制作jar包-并添加到maven仓库/">
     <!-- 打赏 -->
     <link rel="stylesheet" href="/css/qrcode.css">
     
@@ -144,13 +144,14 @@
 <!--only post-->
 
 
-<img class="wechat-title-img" src="https://github.com/LiuChenZe/LiuChenZe.github.io/blob/master/2018/11/28/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEvue%E7%8E%AF%E5%A2%83Windows-MacOS/logo.png?raw=true">
+<img class="wechat-title-img"
+     src="">
 
 
 <style>
     
     header.intro-header {
-        background-image: url('https://github.com/LiuChenZe/LiuChenZe.github.io/blob/master/2018/11/28/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEvue%E7%8E%AF%E5%A2%83Windows-MacOS/logo.png?raw=true');
+        background-image: url('')
     }
 
     
@@ -161,19 +162,19 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>安装配置vue环境Windows/MacOS</h1>
+                    <h1>制作jar包,并添加到maven仓库</h1>
                     
                     <span class="meta">
                          作者 LiuChenZe
                         <span>
-                          日期 2018-11-28
+                          日期 2018-12-06
                          </span>
-                         <span>字数 151</span>
+                         <span>字数 300</span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#开发环境搭建"
-                           title="开发环境搭建">开发环境搭建</a>
+                        <a class="tag" href="/tags/#java"
+                           title="java">java</a>
                         
                     </div>
                 </div>
@@ -182,7 +183,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            安装配置vue环境Windows/MacOS
+            制作jar包,并添加到maven仓库
         </span>
     </div>
 </header>
@@ -193,19 +194,11 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><ol>
-<li>安装<a href="https://nodejs.org" target="_blank" rel="noopener">node.js</a></li>
-<li>打开cmd,输入<code>node -v</code>测试是否安装成功<img src="https://github.com/LiuChenZe/LiuChenZe.github.io/blob/master/2018/11/28/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEvue%E7%8E%AF%E5%A2%83Windows-MacOS/256716-20160304194309018-1694385283.jpg?raw=true" alt="node安装测试" title="node安装测试"></li>
-<li>由于新版node已经集成npm,所以npm也已经安装成功,输入<code>npm -v</code>测试<img src="https://github.com/LiuChenZe/LiuChenZe.github.io/blob/master/2018/11/28/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEvue%E7%8E%AF%E5%A2%83Windows-MacOS/256716-20160304194321627-2059258782.jpg?raw=true" alt="npm安装测试" title="npm安装测试"></li>
-<li>输入<code>npm i nrm -g</code>,安装nrm</li>
-<li>输入<code>nrm use taobao</code>切换npm源,原理与切换maven中央仓库一样,加快国内访问npm的速度</li>
-<li>输入<code>nrm ls</code>查看是否已经切换了npm源<img src="https://github.com/LiuChenZe/LiuChenZe.github.io/blob/master/2018/11/28/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEvue%E7%8E%AF%E5%A2%83Windows-MacOS/TIM%E5%9B%BE%E7%89%8720181128144008.png?raw=true" alt="查看npm源" title="查看npm源"></li>
-<li>输入<code>npm i yarn -g</code>安装yarn</li>
-<li>输入<code>npm i @vue/cli -g</code>安装vue-cli 3.0</li>
-<li>输入<code>npm install webpack -g</code>安装webpack</li>
-<li>输入<code>webpack -v</code>验证是否安装成功<img src="https://github.com/LiuChenZe/LiuChenZe.github.io/blob/master/2018/11/28/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEvue%E7%8E%AF%E5%A2%83Windows-MacOS/TIM%E5%9B%BE%E7%89%8720181128144118.png?raw=true" alt="webpack安装测试" title="webpack安装测试"></li>
-</ol>
-<h1 id="MacOs-待续"><a href="#MacOs-待续" class="headerlink" title="MacOs(待续)"></a>MacOs(待续)</h1>
+                <h1 id="制作jar包"><a href="#制作jar包" class="headerlink" title="制作jar包"></a>制作jar包</h1><p>(1) 搭建一个maven项目<br>(2) 在pom.xml文件中配置Mave依赖和插件</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.czd<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>firstmaven<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">packaging</span>&gt;</span>jar<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">finalName</span>&gt;</span>firstmaven1<span class="tag">&lt;/<span class="name">finalName</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-assembly-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">appendAssemblyId</span>&gt;</span>true<span class="tag">&lt;/<span class="name">appendAssemblyId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">descriptorRefs</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">descriptorRef</span>&gt;</span>jar-with-dependencies<span class="tag">&lt;/<span class="name">descriptorRef</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">descriptorRefs</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">archive</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">archive</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">executions</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">execution</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">id</span>&gt;</span>make-assembly<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">phase</span>&gt;</span>package<span class="tag">&lt;/<span class="name">phase</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">goals</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">goal</span>&gt;</span>assembly<span class="tag">&lt;/<span class="name">goal</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">goals</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">execution</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">executions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>(3) 刷新maven,使用maven:assembly进行打包,选中后,点击上面绿色的三角符号开始打包<br>(4) 打包结束之后,在target目录下面会生成jar包,这里jar报分为带依赖的包和不带依赖的包,带依赖的包表示jar包中已经包括了pom.xml中的所有依赖</p>
+<h1 id="将jar包添加到本地maven仓库"><a href="#将jar包添加到本地maven仓库" class="headerlink" title="将jar包添加到本地maven仓库"></a>将jar包添加到本地maven仓库</h1><p>(1) 找到自己的maven仓库<br>(2) 将jar包放到maven仓库的跟目录<br>(3) 打开cmd窗口,输入以下命令<code>mvn install:install-file -Dfile=D:\maven-repository\chenzede.jar  -DgroupId=com.czd -DartifactId=core  -Dversion=1.0.0 -Dpackaging=jar</code>, 将file改为自己的jar包路径,groupId和artifactId也同样修改<br>(4) 成功之后maven仓库的样子如下<br>(5) 之后就可以在maven中引入了,例如pom.xml文件中添加</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.czd<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
                 <hr>
                 <!-- 打赏 -->
                 
@@ -220,8 +213,8 @@
                         <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
                         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
                         <p><span>本文作者:</span><a href="/" title="访问 LiuChenZe 的个人博客">LiuChenZe</a></p>
-                        <p><span>本文链接:</span><a href="/2018/11/28/安装配置vue环境Windows-MacOS/" title="安装配置vue环境Windows/MacOS">http://LiuChenZe.github.io/2018/11/28/安装配置vue环境Windows-MacOS/</a>
-                        <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://LiuChenZe.github.io/2018/11/28/安装配置vue环境Windows-MacOS/"  aria-label="复制成功！"></i></span>
+                        <p><span>本文链接:</span><a href="/2018/12/06/制作jar包-并添加到maven仓库/" title="制作jar包,并添加到maven仓库">http://LiuChenZe.github.io/2018/12/06/制作jar包-并添加到maven仓库/</a>
+                        <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://LiuChenZe.github.io/2018/12/06/制作jar包-并添加到maven仓库/"  aria-label="复制成功！"></i></span>
                         </p>
                         <p><span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
                     </div>
@@ -243,15 +236,10 @@
 
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2018/12/06/制作jar包-并添加到maven仓库/" data-toggle="tooltip" data-placement="top"
-                           title="制作jar包,并添加到maven仓库">&larr; Previous Post</a>
-                    </li>
-                    
                     
                     <li class="next">
-                        <a href="/2018/09/26/P5壁纸收集/" data-toggle="tooltip" data-placement="top"
-                           title="P5壁纸收集">Next Post &rarr;</a>
+                        <a href="/2018/11/28/安装配置vue环境Windows-MacOS/" data-toggle="tooltip" data-placement="top"
+                           title="安装配置vue环境Windows/MacOS">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -289,7 +277,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Windows"><span class="toc-text">Windows</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MacOs-待续"><span class="toc-text">MacOs(待续)</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#制作jar包"><span class="toc-text">制作jar包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#将jar包添加到本地maven仓库"><span class="toc-text">将jar包添加到本地maven仓库</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -311,8 +299,8 @@
                     </h5>
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/#开发环境搭建"
-                           title="开发环境搭建">开发环境搭建</a>
+                        <a class="tag" href="/tags/#java"
+                           title="java">java</a>
                         
                     </div>
                 </section>
